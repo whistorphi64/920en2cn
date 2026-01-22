@@ -1,0 +1,885 @@
+\documentclass[10pt]{article}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{cite}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{color}
+\geometry{a4paper,margin=20mm}
+\usepackage{indentfirst}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{makecell}
+\allowdisplaybreaks[4]
+\newcommand{\blue}{\color{blue}}
+\begin{document}
+
+\title{Studies on quark-mass dependence of the $N^*(920)$ pole from unitarized $\pi N$ $\chi$PT amplitudes}
+
+
+\author{Xu Wang\textsuperscript{1}\footnote{wangxu0604@stu.pku.edu.cn}, Kai-Ge Kang\textsuperscript{1,2}\footnote{kaige@alumni.pku.edu.cn;
+ part of this work is done while the author was visiting SCU.}, 
+Qu-Zhi Li\textsuperscript{2}\footnote{liqz@scu.edu.cn (corresponding author)},
+Zhiguang Xiao\textsuperscript{2}\footnote{xiaozg@scu.edu.cn (corresponding author)}
+and Han-Qing Zheng\textsuperscript{2}\footnote{zhenghq@scu.edu.cn}\\
+\small \textsuperscript{1} School of Physics, Peking University, Beijing 100871, China\\
+\small \textsuperscript{2} Institute of Particle and Nuclear Physics, College of Physics,
+Sichuan University, Chengdu, Sichuan 610065, China
+}
+\maketitle
+
+\begin{abstract}
+ The quark-mass dependence of the $N^*(920)$ pole is analyzed using $K$-matrix method, with the $\pi N$ scattering amplitude calculated up to $O(p^3)$  order in chiral perturbation theory. As the quark mass increases, the $N^*(920)$ pole gradually approaches the real axis in the complex $w$-plane (where $w=\sqrt{s}$). Eventually, in the $O(p^2)$ case, it crosses the $u$-cut on the real axis and enters the adjacent Riemann sheet when the pion mass reaches $526~{\rm MeV}$. At order $O(p^3)$, the rate at which it approaches the real axis slows down; however, we argue that it will ultimately cross the $u$-cut and enter the adjacent Riemann sheet as well. Additionally, the trajectory of the \(N^*(920)\) pole is in qualitative agreement with the results from the linear $\sigma$ model calculation.
+\end{abstract}
+
+\section{Introduction}\label{sec:i}
+    The study of pion-nucleon scattering has a history spanning over sixty years. It is therefore surprising that the pole structure of the sub-threshold $\pi-N$ scattering amplitude, particularly in the $S_{11}$ channel, has only been clarified very recently. Two key findings have emerged: first, as demonstrated in Ref.~\cite{Li:2021oou}, partial-wave amplitudes (PWAs) indeed contain poles --- specifically, virtual states --- located on the real axis below threshold on the second Riemann sheet (RSII). Second, a novel resonance pole has been identified in the $S_{11}$ channel through various unitarized approaches, including the product  representation~\cite{Zheng:2003rw,Wang:2017agd,Wang:2018nwi}, the $K$-matrix fit~\cite{ctp20may}, and the $N/D$ method~\cite{cpc22quz}. The existence of this resonance has been further confirmed by the \emph{model-independent} Roy-Steiner equation formalism~\cite{Cao:2022zhn,Hoferichter:2023mgy}, which respects  analyticity, unitarity, and crossing symmetry of the $S$-matrix. This sub-threshold pole, located at $\sqrt{s}= (918 \pm 3) - i(163 \pm 9)~\mathrm{MeV}$, has been designated as $N^*(920)$. See \cite{Doring:2025sgb, Li:2025man} for recent reviews.
+
+    Meanwhile, understanding the quark-mass dependence of resonance poles is crucial, which offers a unique perspective on strong interaction physics. Lattice QCD provides a first-principle, non-perturbative framework to investigate how hadron states depend on the quark mass. However, parameterizations of infinite-volume PWAs can introduce model dependence when fitting finite-volume spectra using the L\"uscher formula~\cite{Luscher:1990ux} and its generalizations~\cite{Rummukainen:1995vs, Fu:2011xz, Leskovec:2012gb}. Ref.~\cite{Cao:2023ntr} demonstrated a model-independent approach to interpreting lattice data via the generalized Roy equation, revealing that the $\sigma$ meson becomes a bound state, with a new resonance emerging, at $m_\pi\simeq 391\mathrm{MeV}$. Similar studies have also been completed for $\pi K$ scattering, as detailed in Refs.~\cite{Cao:2024zuy,Cao:2025hqm}. Subsequently, the trajectory of the $\sigma$ with varying $m_\pi$ was illustrated within the $O(N)$ linear $\sigma$ model (L$\sigma$M)~\cite{Lyu:2024elz,Lyu:2024lzr}.
+
+    The first attempt to trace the trajectory of the $N^*(920)$ with varying pion masses was conducted within the L$\sigma$M with nucleons~\cite{Li:2025fvg}. In that renormalizable model, the authors simultaneously computed the trajectories of both the $\sigma$ and the $N^*(920)$ using several unitarization methods at the one-loop level. The trajectory of the $\sigma$ was found to be consistent with previous results, while that of the $N^*(920)$ was novel: it crosses the $u$-cut (the cut $(c_L,c_R)$ in Fig.~\ref{fig:piNcutline}) to the adjacent Riemann sheet at tree level, disappearing from the RSII, yet remains on the complex plane of the RSII at the one-loop level.
+
+    To further elucidate the fate of the $N^*(920)$, this work employs Baryon Chiral Perturbation Theory (B$\chi$PT) to investigate its trajectory as the pion mass increases. As a low-energy effective field theory of QCD, B$\chi$PT has been successfully applied to describe $\pi N$ elastic scattering phase shifts and the pion-nucleon $\sigma$-term. A particular advantage of B$\chi$PT in studies with unphysical pion masses is that other parameters, such as the nucleon mass $m_N$, pion decay constant $F_\pi$ and  the axial coupling constant $g_A$, can be determined self-consistently once the low-energy constants are fixed at the physical pion mass.
+
+The paper is organized as follows. Section II gives a brief introduction to B$\chi$PT and PWAs of $\pi N$ scatterings. In  section III, the trajectory of $N^*(920)$ is presented at $O(p^2)$ and $O(p^3)$ orders for different sets of LECs values. We conclude  with a brief summary in section IV.  
+
+\section{A brief introduction to B$\chi$PT and PWAs of $\pi N$ scatterings}
+The Lagrangian in B$\chi$PT can be expanded as $
+\mathcal{L} = \sum_{i=1}^{\infty} \mathcal{L}_{\pi\pi}^{(2i)} + \sum_{j=1}^{\infty} \mathcal{L}_{\pi N}^{(j)}$,
+where the magnitudes of $\mathcal{L}_{\pi\pi}^{(2i)}$ and $\mathcal{L}_{\pi N}^{(j)}$ are $O(p^{2i})$ and $O(p^{j})$, respectively. Terms of the meson part for calculation up to $O(p^{4})$ are \cite{ap84gas}
+\begin{align}
+\mathcal{L}_{\pi\pi}^{(2)} &= \frac{F^{2}}{4} \operatorname{Tr}\left[
+\nabla_{\mu}U \left(
+\nabla^{\mu}U\right)^{\dagger}\right] + \frac{F^{2}}{4} \operatorname{Tr}\left[\chi U^{\dagger} + U \chi^{\dagger}\right], \label{eq:L2pi} \\
+\mathcal{L}_{\pi\pi}^{(4)} &= \frac{l_{3} + l_{4}}{16} \left[\operatorname{Tr}\left(\chi U^{\dagger} + U \chi^{\dagger}\right)\right]^{2} + \frac{l_{4}}{8} \operatorname{Tr}\left[
+\nabla_{\mu}U \left(
+\nabla^{\mu}U\right)^{\dagger}\right] \operatorname{Tr}\left(\chi U^{\dagger} + U \chi^{\dagger}\right)~, \label{eq:L4pi}
+\end{align}
+where $F_\pi$ is the pion decay constant in the chiral limit. $\chi = M^{2} \mathds{1}$ (assuming isospin symmetry) and $M$ is the lowest order pion mass. Pions are contained in the SU(2) matrix:
+\begin{equation}
+U = \exp\left(i \frac{\phi}{F}\right), \quad \phi = \vec{\phi} \cdot \vec{\tau} = 
+\begin{pmatrix}
+\pi_{0} & \sqrt{2} \pi^{+} \\
+\sqrt{2} \pi^{-} & -\pi_{0}
+\end{pmatrix}, \label{eq:Umatrix}
+\end{equation}
+The covariant derivative acting on the pion fields is defined as 
+$\nabla_{\mu}U = \partial_{\mu}U - i r_{\mu} U + i U l_{\mu}$,
+where $l_{\mu}$ and $r_{\mu}$ are the external fields.
+
+The required baryon Lagrangians for calculation up to $O(p^{3})$ are \cite{FETTES2000273}
+\begin{align}
+\mathcal{L}_{\pi N}^{(1)} &= \overline{\Psi} \left\{i 
+ \slashed{D} - m + \frac{g}{2} \gamma^{\mu} \gamma_{5} u_{\mu} \right\} \Psi, \label{eq:L1N} \\
+\mathcal{L}_{\pi N}^{(2)} &= \overline{\Psi} \left\{ c_{1} \operatorname{Tr}[\chi_{+}] - \frac{c_{2}}{4m^{2}} \operatorname{Tr}[u_{\mu} u_{
+u}] \left(D^{\mu} D^{
+u} + \text{h.c.}\right) + \frac{c_{3}}{2} \operatorname{Tr}[u^{\mu} u_{\mu}] - \frac{c_{4}}{4} \gamma^{\mu} \gamma^{
+u} [u_{\mu}, u_{
+u}] \right\} \Psi, \label{eq:L2N} \\
+\mathcal{L}_{\pi N}^{(3)} &= \overline{\Psi} \Bigg\{ -\frac{d_{1} + d_{2}}{4m} \Big( [u_{\mu}, [D_{
+u}, u^{\mu}] + [D^{\mu}, u_{
+u}]] D^{
+u} + \text{h.c.} \Big) 
+ \\
+&\quad + \frac{d_{3}}{12m^{3}} \Big( [u_{\mu}, [D_{
+u}, u_{\lambda}]] \left(D^{\mu} D^{
+u} D^{\lambda} + \text{sym.} \right) + \text{h.c.} \Big) + i \frac{d_{5}}{2m} \Big( [\chi_{-}, u_{\mu}] D^{\mu} + \text{h.c.} \Big) 
+ \\
+&\quad + i \frac{d_{14} - d_{15}}{8m} \Big( \sigma^{\mu
+u} \operatorname{Tr}\left[[D_{\lambda}, u_{\mu}] u_{
+u} - u_{\mu} [D_{
+u}, u_{\lambda}]\right] D^{\lambda} + \text{h.c.} \Big) 
+ \\
+&\quad + \frac{d_{16}}{2} \gamma^{\mu} \gamma^{5} \operatorname{Tr}\left[\chi_{+}\right] u_{\mu} + \frac{i d_{18}}{2} \gamma^{\mu} \gamma^{5} \left[D_{\mu}, \chi_{-}\right] \Bigg\} \Psi, \label{eq:L3N}
+\end{align}
+where $m_N$ and $g$ are the bare nucleon mass and the bare axial-vector
+coupling constant, respectively. Those $l_i$, $c_{i}$ and $d_{i}$ are the LECs.
+The chiral vielbein and the covariant derivative with respect to the nucleon
+field are defined as
+\begin{align}
+u_{\mu} &= i \left[ u^{\dagger} \left(\partial_{\mu} - i r_{\mu}\right) u - u \left(\partial_{\mu} - i l_{\mu}\right) u^{\dagger} \right], \\
+D_{\mu} &= \partial_{\mu} + \Gamma_{\mu}, \\
+\Gamma_{\mu} &= \frac{1}{2} \left[ u^{\dagger} \left(\partial_{\mu} - i r_{\mu}\right) u + u \left(\partial_{\mu} - i l_{\mu}\right) u^{\dagger} \right], \\
+u &= \sqrt{U} = \exp\left(\frac{i \phi}{2F}\right). \label{eq:vielbein}
+\end{align}
+According to the power counting rule \cite{WEINBERG19913}, the amplitude for a diagram with $L$ loops, $I_{\phi}$ inner pion lines, $I_{N}$ inner nucleon lines and $N^{(k)}$ vertices from $O(p^{k})$ Lagrangian are of $O(p^{D})$, where 
+$$D = 4L - 2I_{\phi} - I_{N} + \sum_{k}^{\infty} k N^{(k)}~.$$ 
+In this manuscript, the full amplitudes of $\pi N$ scatterings are calculated up to $O(p^3)$ order. 
+
+
+ For the process $\pi^a(p)+N_i(q)\to \pi^{a^\prime}(p^\prime)+N_f(q^\prime)$,
+ the isospin amplitude can be decomposed as: 
+ \begin{equation}
+T=\chi_f^{\dagger}\left(\delta^{a a^{\prime}} T^{+}+\frac{1}{2}\left[\tau^{a^{\prime}}, 
+\tau^a\right] T^{-}\right) \chi_i~,
+\end{equation}
+where  $\tau^a$ ($a=1,2,3$) are Pauli matrices, and $\chi_i$ ($\chi_f$) corresponds to the
+isospin wave function of the initial (final) nucleon state. The
+amplitudes with isospins $I = 1/2, 3/2$ can be written as
+\begin{equation}
+\begin{aligned}
+& T^{I=1 / 2}=T^{+}+2 T^{-}~, \\
+& T^{I=3 / 2}=T^{+}-T^{-}~.
+\end{aligned}
+\end{equation}
+As for Lorentz structure, for an isospin index $I=1/2,3/2$,
+      \begin{equation}
+T^I=\bar{u}^{(s^{\prime})}\left(q^{\prime}\right)\left[A^I(s,
+t)+\frac{1}{2}\left(\slashed{p} +\slashed{p}^{\prime}\right)
+B^I(s, t)\right] u^{(s)}(q),
+\end{equation}
+with the superscripts $(s), (s^\prime)$ denoting the spins of Dirac
+spinors and  three Mandelstam variables $s=(p+q)^2, t=(p-p^\prime),
+u=(p-q^\prime)$ obeying the constraint $s+t+u=2m_N^2+2m_\pi^2$. The partial wave amplitude $T^{I,J}_\pm$  for the
+ $L_{2I2J}$ channel with orbital angular momentum $L$, total angular momentum  $J$ and 
+total isospin  $I$ is defined as: 
+\begin{equation}
+   T^{I,J}_{\pm}= T(L_{2I2J})=T^{I,J}_{++}(s) \pm T^{I,J}_{+-}(s),\quad L=J\mp
+    \frac{1}{2},
+\end{equation}
+where the definition of partial wave helicity amplitudes are written as:
+\begin{equation}
+\begin{aligned}
+     {T}^{I,J}_{++}= & 2 m_N A^{I,J}_C(s
+    )+\left(s-m_\pi^2-m_N^2\right) B^{I,J}_C(s)\\
+    {T}^{I,J}_{+-}= &-\frac{1}{\sqrt{s}}\left[\left(s-m_\pi^2+m_N^2\right)
+                    A^{I,J}_S(s)+m_N\left(s+m_\pi^2-m_N^2\right) B^{I,J}_S(s)\right]
+\end{aligned}
+\end{equation}
+with
+\begin{equation}\label{FSC}
+    F_{C/S}^{I,J}(s)=\int_{-1}^1 \mathrm{~d} z_s F^I(s, t)\left[P_{J+1 /
+2}\left(z_s\right)\pm P_{J-1 / 2}\left(z_s\right)\right],\quad F=A,B
+\end{equation}
+and $z_s=\cos\theta$ with  $\theta$ the scattering angle.  The partial wave
+amplitudes $T^{I,J}_{\pm}$ satisfy unitarity condition:
+\begin{equation}
+    \operatorname{Im}T^{I,J}_{\pm}(s)
+    =\rho(s,m_\pi,m_N)|T^{I,J}_{\pm}(s)|^2,\quad s>s_R=(m_\pi+m_N)^2\ .
+\end{equation}
+For simplicity, we denote the PWA $T(S_{11})$  as $T$ in the following.
+
+The partial wave $S$ matrix element in $S_{11}$ channel can be defined as
+\begin{equation}
+    S=1+2i\rho(s)T\ ,
+\end{equation}
+where $\rho(s)=\sqrt{{[s-(m_N+m_\pi)^2][s-(m_N-m_\pi)^2]}}/s$.
+A $K$-matrix  approximation is used to restore unitarity from perturbation amplitudes. Then, the partial wave amplitude and partial wave $S$ matrix element are expressed as
+\begin{equation}
+    \tilde{T}=\frac{K}{1-i\rho K},\ \tilde{S}=\frac{1+i\rho K}{1-i\rho K}\ ,
+    \label{eq:tllk}
+\end{equation}
+where $K$ needs to be real in the physical region above the $\pi N$ threshold to meet the unitary requirement of the $S$ matrix. Usually $K$ is taken as the real part of the perturbation amplitude. For $\pi N$ scattering, it is
+\begin{equation}
+  \mathcal{K}^{(2)}\equiv T^{(2)}
+\end{equation}
+ for $O(p^2)$ calculation, while  $\mathcal{K}^{(3)} $ is set to 
+ \begin{equation}
+  T^{(3)}-i\rho (T^{(1)})^2
+ \end{equation}
+ for  $O(p^3)$ calculation, because $T^{(3)}$ contains an imaginary part on the right hand cut~\cite{Chen:2012nx}.
+
+The partial wave amplitude as constructed is a real analytic function on the complex $s$ plane. There exists a physical cut, or right-hand cut, above the threshold $s>(m_N+m_\pi)^2$. Partial wave projection and loop integrals also introduce other cuts, called left-hand cuts. All the cut structures in $\pi N$ scattering are shown in Fig.~\ref{fig:piNcutline}~\cite{pr59mac,Kennedy:1962ovz}. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cut.pdf}
+    \caption{Cuts in $\pi N$ PWAs, represented by the bold lines. $s_L=(m_N-m_\pi)^2,c_L=(m_N^2-m_\pi^2)^2/m_N^2,c_R=m_N^2+2m_\pi^2,s_R=(m_N+m_\pi)^2$}
+    \label{fig:piNcutline}
+\end{figure}
+However, in general, such unitarization approximations suffer from problems of violation of analyticity and 
+crossing symmetry~\cite{Qin:2002hk,Guo:2007ff,Guo:2007hm,Yao:2020bxx}.\footnote{For example, a [1,1] Pad\'e approximant of $\pi\pi$ scattering tend to put all contributions from different sources, e.g., s channel poles, left hand cuts, crossed channel resonance exchanges, into one single s channel resonance.} A direct consequence is the appearance of spurious physical sheet resonances (SPSRs).  
+A case by case analysis seems to be required, at least, to ensure that the SPSRs play a minor contribution to physical quantities such as phase shifts. Barring for this, the K-matrix unitarization provides a quick but rough estimates of the physical pole position such as $N^*(920)$.
+
+\section{Analysis of the $N^*(920)$ Pole Trajectory and Its Quark Mass Dependence}
+
+To proceed, we follow Refs.~\cite{Chen:2012nx,Wang:2017agd}. First, we repeat the $O(p^2)$ and $O(p^3)$ results of  Ref.~\cite{Chen:2012nx}. 
+The obtained partial wave unitary amplitude can then be used to calculate the corresponding phase shift $\delta={\rm arctan}[ \rho \tilde{T} ]$ and a subsequent fit to the phase shift data in turn  determines the  low energy constants. For the $O(p^2)$ calculations, we directly use the results in Ref.~\cite{Wang:2017agd}:
+\begin{equation}
+    c_1=-0.841~{\rm GeV}^{-1},\ c_2=1.170~{\rm GeV}^{-1},\ c_3=-2.618~{\rm GeV}^{-1},\ c_4=1.677~{\rm GeV}^{-1}\ .
+\end{equation}
+By substituting these low energy constants and physical quantities $m_N=0.9383~{\rm GeV},m_\pi=0.1396~{\rm GeV},F_\pi=0.0924~{\rm GeV},g_A=1.267$, we can calculate the cuts and poles of the partial wave unitary matrix element of the $S_{11}$ channel on the complex $s$ plane. The pole corresponding to $N^*(920)$ resonance is found  at {$\sqrt{s}=0.954\pm i0.265~{\rm GeV}$}.
+
+
+In the isospin limit, the pion mass is related to the quark mass by the relation $m_\pi^2\propto 2B_0\hat{m}$, where $\hat{m}=(m_u+m_d)/2$~\cite{pr68gel}. Consequently, investigating the quark-mass dependence of the $N^*(920)$ resonance is equivalent to studying its evolution with increasing pion mass. Additionally, it is essential to determine the values of key physical quantities (e.g., $m_N$, $g_A$, and $F_\pi$) at different pion masses. Fortunately, within the framework of  B$\chi$PT, these dependence relations can be directly computed. Up to the $O(p^3)$ order (one-loop diagrams), the explicit dependence relations are given by:
+\begin{equation}
+    \begin{aligned}
+        m_N &= m - 4 c_1 M^2 + \Delta_m,
+        \quad \Delta_m  = \frac{3g^2 m_N}{32\pi^2 F^2} \left[A_0(m_N^2) + M^2 B_0(m_N^2,M^2,m_N^2)\right],\\
+        F_{\pi} &= F + \Delta_F,
+        \quad \Delta_F = \frac{l_4 M^2}{F} + \frac{A_0[M^2]}{16\pi^2 F},
+        \quad l_4 = l_4^r + \gamma_4\lambda, \\
+        \lambda &= \frac{1}{(4\pi)^2}\mu^{d-4}\left\{\frac{1}{d-4} - \frac{1}{2}(\ln 4\pi + \Gamma'(1) + 1)\right\},
+        \quad l_4^r = \frac{\gamma_4}{32\pi^2}\left(\bar{l}_4 + \ln\frac{M^2}{\mu^2}\right), \quad \gamma_4 = 2,\\
+        g_A &= g + 4 d_{16}M^2 + \Delta_g,\\
+        \Delta_g &= \frac{g\left[4(g^2-2)m_N^2+(3g^2+2)M^2\right]}{16\pi^2 F^2(4m_N^2 - M^2)}A_0[m_N^2] + \frac{g\left[(8g^2+4)m_N^2-(4g^2+1)M^2\right]}{16\pi^2 F^2 (4m_N^2 - M^2)}\\
+        &\quad +\frac{gM^2\left[-8(g^2+1)m_N^2+(3g^2+2)M^2\right]}{16\pi^2 F^2(4m_N^2-M^2)}B_0[m_N^2,m_N^2,M^2]-\frac{g^3 m_N^2(4m_N^2+3M^2)}{16\pi^2 F^2(4m_N^2-M^2)},
+    \end{aligned}
+    \label{eqAllM}
+\end{equation}
+where $A_0$ and $B_0$ denote the Passarino-Veltman functions, which are defined as~\cite{npb79pas}:
+\begin{align}
+    \begin{aligned}
+        A_0(m^2)&=-16\pi^2 i \mu^{4-D} \int \frac{d^D k}{(2\pi)^D}\frac{1}{k^2-m^2},\\
+        B_0(p^2,m_1^2,m_2^2)&=-16\pi^2 i \mu^{4-D} \int \frac{d^D k}{(2\pi)^D}\frac{1}{(k^2-m_1^2)\left[(k+p)^2-m_2^2\right]}.
+    \end{aligned}
+\end{align}
+
+Using the aforementioned formulas, the resulting dependence relations are visualized in Fig.~\ref{fig:All(M)}. The following parameter values are adopted in the calculations: $d_{16} = -0.83\,\text{GeV}^{-2}$~\cite{d16value,yao2017extraction} and $\bar{l}_4 = 4.4$~\cite{l4value,Colangelo_2001}. 
+For the three sets of $m_N$ vs. $m_\pi$ dependence curves presented in the figure, the corresponding $c_1$ parameters are chosen 
+from Ref.~\cite{Wang:2017agd} for the $O(p^2)$ order, Ref.~\cite{jhep16yao} for the $O(p^3)-(\text{Yao})$ set and Ref.~\cite{WI08,Alarc_n_2013} for  the $O(p^3)-\text{(WI08)}$ set, respectively. 
+%For the three sets of $m_N$ vs. $m_\pi$ dependence curves presented in the figure, the corresponding $c_1$ parameters are chosen as follows: $c_1=-0.841\,\text{GeV}^{-1}$ for the $O(p^2)$ order~\cite{Wang:2017agd}, $c_1=-1.22\,\text{GeV}^{-1}$ for the $O(p^3)-\text{(Yao)}$ set~\cite{jhep16yao}, and $c_1=-1.50\,\text{GeV}^{-1}$ for the $O(p^3)-\text{(WI08)}$ set~\cite{WI08,Alarc_n_2013}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{dependence_plot_All_separated.pdf} 
+    \caption{Dependencies of the nucleon mass $m_N$, axial-vector coupling $g_A$, and pion decay constant $F_{\pi}$ on the pion mass $m_{\pi}$.}
+    \label{fig:All(M)}
+\end{figure}
+
+
+By substituting these derived dependence relations into the partial-wave unitary matrix element, we ultimately obtain the trajectory of the $N^*(920)$ resonance as the pion mass varies from $0.1396~{\rm GeV}$ to $0.60~{\rm GeV}$. Fig.~\ref{fig:Op23w} illustrates the evolution of this $N^*(920)$ pole trajectory in the $w$-plane (where $w=\sqrt{s}$): as the pion mass increases, the pole gradually migrates toward the real axis and ultimately traverses the $u$-cut (at $m_\pi=0.526\,\text{GeV}$), thereby entering the adjacent Riemann sheet. Furthermore, the crossing position is consistent with the result calculated via Equation (43) in Ref.~\cite{Li:2025fvg}, which is expressed as:
+\begin{equation}
+    (m_N - m_\pi - w)(m_N + m_\pi - w)\left[m_N(m_N - w)(m_N + w)^2 - m_\pi^4\right] = 0,\quad w=\sqrt{s}
+    \label{crosspoint}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+ \includegraphics[width=0.8\textwidth]{run_Op23_w_withLi.pdf}
+\caption{Variation of the $N^*(920)$ pole position with the pion mass in the $\mathcal{K}^{(2)}$ and $\mathcal{K}^{(3)}$ amplitudes. The units for the pole positions are in GeV. The results obtained in this work are shown in red upright triangles ($O(p^2)$ tree-level) and green solid circle ($O(p^3)$ one-loop), corresponding to pion masses in the range $m_\pi=0.1396$–$0.60\ \text{GeV}$. The results from Ref.~\cite{Li:2025fvg} are also displayed in orange upside-down triangles (Tree–Li) and blue squares (Loop–Li), covering the range $m_\pi=0.138$–$0.360\ \text{GeV}$.}
+\label{fig:Op23w}
+\end{figure}
+
+
+For the $O(p^3)$ calculations, more low energy constants are needed compared with $O(p^2)$.  We use the results of Fit 1 in Ref.~\cite{jhep16yao}(denoted as Yao in Fig.~\ref{fig:Op23w}):
+\begin{equation}\label{ssecond}
+    \begin{aligned}
+    c_1 &= -1.22\,\text{GeV}^{-1}, \quad c_2 = 3.58\,\text{GeV}^{-1}, \quad c_3 = -6.04\,\text{GeV}^{-1}, \quad c_4 = 3.48\,\text{GeV}^{-1} \\
+    d_{1}+d_{2} &= 3.25\,\text{GeV}^{-2}, \quad d_3 = -2.88\,\text{GeV}^{-2}, \quad d_5 = -0.15\,\text{GeV}^{-2} \\
+    d_{14}-d_{15} &= -6.19\,\text{GeV}^{-2}, \quad d_{18} = -0.47\,\text{GeV}^{-2}
+    \end{aligned}
+\end{equation}
+Using these low energy constants, the corresponding  positions of $N^*(920)$ pole are found to be $\sqrt{s}=0.896\pm i0.258~{\rm GeV}$. Specifically, as the pion mass increases from $0.1396~{\rm GeV}$ to $0.60~{\rm GeV}$, the trajectory of $N^*(920)$ is shown in Fig.~\ref{fig:Op23w}. Here, we have not tracked the trajectory after crossing the $u$-cut due to two reasons: first, the trajectory evolves slowly in the loop calculations; second, the error in the integral calculation becomes significant as the pole approaches the real axis. Nevertheless, {\blue it is expected} that even in the loop calculations, the $N^*(920)$ will also cross the $u$-cut and enter the adjacent Riemann sheet.
+
+{We also compare our results with those from Ref.~\cite{Li:2025fvg}, which were obtained using the Linear Sigma Model (L$\sigma$M) with nucleons. While the overall trends of the trajectories are consistent, the rate at which the pole approaches the real axis in the L$\sigma$M is notably higher at both tree and one-loop levels. This causes the pole to cross the $u$-cut at a smaller pion mass in their tree-level calculation. Furthermore, due to the limited applicability range of the L$\sigma$M, the authors did not extend their one-loop calculation to very large pion masses. Consequently, the pole in the L$\sigma$M appears to remain on the complex plane without reaching the real axis. In contrast, here, the $O(p^3)$ result shows that the trajectory continues to bend downward toward the real axis with increasing $m_\pi$, following a trend similar to the tree-level behavior.}
+
+
+In addition, we also tested another set of parameters~\cite{WI08,Alarc_n_2013}, referred to as WI08 parameter set, and found that the $O(p^3)$ calculation yields consistent results. The results are shown in Fig.~\ref{fignew:loop_results} below, and the specific parameters are listed as follows:
+\begin{equation}\label{second}
+    \begin{aligned}
+    c_1 &= -1.50\,\text{GeV}^{-1}, \quad c_2 = 3.76\,\text{GeV}^{-1}, \quad c_3 = -6.63\,\text{GeV}^{-1}, \quad c_4 = 3.68\,\text{GeV}^{-1} \\
+    d_{1}+d_2 &= 3.67\,\text{GeV}^{-2}, \quad d_3 = -2.63\,\text{GeV}^{-2}, \quad d_5 = -0.07\,\text{GeV}^{-2} \\
+    d_{14}-d_{15} &= -6.80\,\text{GeV}^{-2}, \quad d_{18} = -0.50\,\text{GeV}^{-2}\,.
+    \end{aligned}
+\end{equation}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{run_Op33_w_notext.pdf}
+\caption{$m_\pi$ dependence of $N^*(920)$ pole from the full $O(p^3)$ amplitude including loop corrections, using parameters from Eq.~(\ref{second}). \blue The previous $O(p^3)$-(Yao) result in Fig.~\ref{fig:Op23w} is also displayed for comparison.}
+\label{fignew:loop_results}
+\end{figure}
+
+
+
+
+In addition to the dependence relations for $m_N$, $g_A$ and $F_\pi$ derived from chiral perturbation theory, similar results are also available by some theoretical fits performed on the lattice data. For $m_N$, we use the ruler approximation in Ref.~\cite{pos14wal}, that is, $m_N=800~{\rm MeV}+m_\pi$, which is consistent with the lattice QCD {results~\cite{prd13gon,hoferichter2016roy}} in a large range. For $g_A$, we use the $O(p^3)$ result in Ref.~\cite{prd22alv} {\blue (Fig. 4.)}, and for $F_\pi$, we use the fit result with strategy 2  {\blue (left subfigure in Fig.4.)} in Ref.~\cite{prl21nie}. 
+Based on these dependence relations, the resulting trajectory of the $N^{*}(920)$ pole is shown in Fig.~\ref{fig:poletracelattice}. It seems that the points where the $N^{*}(920)$ pole approaches the $u$-cut from the $O(p^2)$ and $O(p^3)$ chiral perturbation theory calculations tend to converge. However, since there is no guarantee that the pole reaches the $u$-cut at the same $m_\pi$ for both $O(p^2)$ and $O(p^3)$ results, this convergence may just be  accidental.
+
+\begin{figure}[H]
+    \centering
+   \includegraphics[scale=0.5]{run_Op23_w_kkg_notext.pdf}
+    \caption{The dependence of the $N^*(920)$ pole position on pion mass, as determined from the $\mathcal{K}^{(2)}$ and $\mathcal{K}^{(3)}$ amplitudes (with the dependencies of $m_N$, $g_A$, and $F_\pi$ on $m_\pi$ taken from lattice–data–based fits). The unit is ${\rm GeV}$. The $\mathcal{K}^{(2)}$ results are indicated by red triangles, while the $\mathcal{K}^{(3)}$ results are shown as green circles. The pion mass $m_\pi$ varies from 0.1396 to 0.44 GeV.}
+    \label{fig:poletracelattice}
+\end{figure}
+
+As illustrated in this section, the $N^*(920)$ pole trajectory  obtained in different approximations and parameter sets are in qualitative agreement with each other.
+
+
+
+
+\section{Summary}\label{sec:s}
+
+In this paper, we have investigated the trajectory of $N^*(920)$ as the pion mass increases within the B$\chi$PT framework both  at $O(p^2)$ and $O(p^3)$ orders. In B$\chi$PT, the functions of the nucleon mass, pion decay constant, and $\pi N$ axial-vector coupling as a function of the pion mass are obtained self-consistently, provided that the LECs are fixed. In both cases, the $N^*(920)$ moves along a rightward-downward trajectory toward the $u$-cut on the complex energy plane, and may eventually cross the $u$-cut, entering the adjacent Riemann sheet defined by the $u$-cut. The result at $O(p^3)$ order shows that the circular cut has marginal effects on the trajectory, and the higher-order contributions only slightly alter the approaching rate of the pole. Furthermore, to test the robustness, we fix the LECs at three different parameter sets. Consequently, all three results demonstrate that the $N^*(920)$ moves toward the $u$-cut and eventually enters the adjacent Riemann sheet. The trajectory is also compared with the result in the previous work~\cite{Li:2025fvg}, showing qualitatively consistent behaviors. Our analyses made in this paper may provide valuable insights for future Lattice studies with unphysical pion masses.
+
+
+
+\vspace{0.2cm}
+{\bf Acknowledgment:} This work is supported by China National Natural Science Foundation under Contract No. 12335002, 12375078.
+This work is also supported by “the Fundamental Research Funds for the Central Universities”.
+
+
+\newpage
+
+%\bibliographystyle{unsrt}
+\bibliographystyle{utphys}
+\bibliography{inspire_cite}
+
+
+
+\appendix
+
+
+
+
+
+
+\end{document}
+
+\section{Loop functions\label{sec:lf}}
+Passarino-Veltman notations~\cite{npb79pas} are used to represent the loop functions. The one-point, two-point, three-point and four-point functions are defined as
+\begin{equation}
+   \begin{aligned}
+      &A_0(m^2)=-16\pi^2 i \mu^{4-D}\int \frac{d^D k}{(2\pi)^D}\frac{1}{k^2-m^2}\\
+      &B_0(p^2,m_1^2,m_2^2)=-16\pi^2 i \mu^{4-D}\int \frac{d^D k}{(2\pi)^D}\frac{1}{(k^2-m_1^2)[(k+p)^2-m_2^2]}\\
+      &C_0(p_1^2,p_2^2,p12^2,m_1^2,m_2^2,m_3^2)=-16\pi^2 i \mu^{4-D}\int \frac{d^D k}{(2\pi)^D}\frac{1}{(k^2-m_1^2)[(k+p_1)^2-m_2^2][(k+p_1+p_2)^2-m_3^2]}\\
+      &D_0(p_1^2,p_2^2,p_3^2,p123^2,p12^2,p23^2,m_1^2,m_2^2,m_3^2,m_4^2) \\
+      &=-16\pi^2 i \mu^{4-D}\int \frac{d^D k}{(2\pi)^D}\frac{1}{(k^2-m_1^2)[(k+p_1)^2-m_2^2][(k+p_1+p_2)^2-m_3^2][(k+p_1+p_2+p_3)^2-m_4^2]}
+   \end{aligned}
+   \label{eq:pv}
+\end{equation}
+where, $pij=p_i+p_j,pijk=p_i+p_j+p_k$, and $D=4-2\epsilon$ is the dimension. After dimensional regularization and Feynman parametrization, the complete expressions of these loop functions are:
+\begin{equation}
+   \begin{aligned}
+      A_0(m^2)=&m^2 \left( -R_{\epsilon} + {\rm ln}\frac{\mu^2}{m^2} \right) \\
+      B_0(p^2,m_1^2,m_2^2)=&-R_{\epsilon}-1-\int_0^1 {\rm ln}\frac{\Delta(x)}{\mu^2} dx\\
+      C_0(p_1^2,p_2^2,p12^2,m_1^2,m_2^2,m_3^2)=&-\int_0^1 dx \int_0^{x}\frac{dy}{S(x,y)}\\
+      D_0(p_1^2,p_2^2,p_3^2,p123^2,p12^2,p23^2,m_1^2,m_2^2,m_3^2,m_4^2)=&\int_0^1 dx \int_0^{x}dy\int_0^{y}dz \frac{1}{T^2(x,y,z)}
+   \end{aligned}
+\end{equation}
+where $\Delta(x), S(x,y)$, and $T(x,y,z)$ are
+\begin{equation}
+   \begin{aligned}
+      \Delta(x)=&p^2 x^2-(p^2+m_1^2-m_2^2)x+m_1^2\\
+      S(x,y)=&p_2^2x^2+p_1^2y^2+(p12^2-p_1^2-p_2^2)xy\\
+      &+(m_2^2-m_3^2-p_2^2)x+(m_1^2-m_2^2+p_2^2-p12^2)y+m_3^2\\
+      T(x,y,z)=&x^2p_3^2+y^2p_{2}^2+z^2p_1^2+xy(p23^2-p_2^2-p_3^2)+yz (p12^2-p_1^2-p_2^2)\\
+      &+xz (p123^2-p12^2-p23^2+p_2^2)+x(m_3^2-m_4^2-p_3^2)+y(m_2^2-m_3^2+p_3^2-p23^2)\\
+      &+z(m_1^2-m_2^2-p123^2+p23^2)+m_4^2
+   \end{aligned}
+\end{equation}
+The infrared regular parts of the loop functions used are:
+\begin{equation}
+   \begin{aligned}
+      &\mathcal{R}\left[A_0(m_N^2)\right]=\mathcal{R}\left[A_0(M^2)\right]=\mathcal{R}\left[B_0(t,M^2,M^2)\right]=0\\
+      &\mathcal{R}\left[B_0(s,M^2,m_N^2)\right]=1-\frac{s-m_N^2}{2m_N^2}+\frac{3M^2}{2m_N^2}+\frac{(s-m_N^2)^3}{4m_N^6}-\frac{3M^2(s-m_N^2)}{2m_N^4}+O(p^4)\\
+      &\mathcal{R}\left[B_0(t,m_N^2,m_N^2)\right]=-1 + \frac{t}{6m_N^2}+O(p^4)\\
+      &\mathcal{R}\left[C_0(M^2, m_N^2, s, m_N^2, m_N^2, M^2)\right]=-\frac{1}{2m_N^2} +\frac{s-m_N^2}{2m_N^4}+ \frac{M^2}{2m_N^4}-\frac{5(s-m_N^2)^2}{12m_N^6}+O(p^3)\\
+      &\mathcal{R}\left[C_0(M^2, t, M^2, m_N^2, m_N^2, m_N^2)\right]=-\frac{1}{2m_N^2}-\frac{M^2}{12m_N^4}-\frac{t}{24m_N^4}+O(p^4)\\
+      &\mathcal{R}\left[C_0(m_N^2, m_N^2, t, M^2, m_N^2, M^2)\right]=\frac{3}{2m_N^2}-\frac{M^2}{3m_N^4}+\frac{11t}{36m_N^4}+O(p^4)\\
+      &\mathcal{R}\left[C_0(m_N^2, m_N^2, t, m_N^2, M^2, m_N^2)\right]=-\frac{1}{2m_N^2}+\frac{M^2}{2m_N^4}+O(p^4)\\
+      &\mathcal{R}\left[D_0(M^2, m_N^2, m_N^2, M^2, s, t, m_N^2, m_N^2, M^2,m_N^2)\right]\\
+      &=-\frac{1}{2m_N^4}+\frac{s-m_N^2}{6m_N^6}-\left[ \frac{t}{12m_N^6}+\frac{M^2}{3m_N^6}+\frac{(s-m_N^2)^2}{12m_N^8} \right] + O(p^3)
+   \end{aligned}
+   \label{eqrapo}
+\end{equation}
+
+\section{Amplitudes of loop diagrams\label{sec:al}}
+For brevity, we denote loop functions as follows from now on:
+\begin{equation}
+    \begin{aligned}
+        &L_1\equiv A_0[M^2]/(2\pi)^D,\ L_2\equiv A_0[m_N^2]/(2\pi)^D,\ L_3\equiv B_0[M^2, m_N^2, m_N^2]/(2\pi)^D,\\
+        &L_4\equiv B_0[m_N^2, M^2, m_N^2]/(2\pi)^D,\ L_5\equiv B_0[s, M^2, m_N^2]/(2\pi)^D,\ L_6\equiv B_0[t, M^2, M^2]/(2\pi)^D,\\
+        &L_7\equiv B_0[t, m_N^2, m_N^2]/(2\pi)^D,\ L_8\equiv C_0[M^2, m_N^2, s, m_N^2, m_N^2, M^2]/(2\pi)^D,\\
+        &L_9\equiv C_0[M^2, t, M^2, m_N^2, m_N^2, m_N^2]/(2\pi)^D,\ L_{10}\equiv C_0[m_N^2, m_N^2, t, M^2, m_N^2, M^2]/(2\pi)^D,\\
+        &L_{11}\equiv C_0[m_N^2, m_N^2, t, m_N^2, M^2, m_N^2]/(2\pi)^D,\ L_{12}\equiv D_0[M^2, m_N^2, m_N^2, M^2, s, t, m_N^2, m_N^2, M^2, m_N^2]/(2\pi)^D
+    \end{aligned}
+\end{equation}
+The full coefficients of these loop functions in the scalar functions of Feynman diagrams in Fig.~\ref{fig:loop} are too lengthy. So we firstly give the results after setting $D=4$ in the coefficients:
+\begin{equation}
+    \begin{aligned}
+    A^+_{La}=&B^+_{La}=0,\ A^+_{Lb}=A^+_{Lc}=\frac{\pi ^2 g_A^2 m_N}{3 f_\pi^4}L_2+\frac{\pi ^2 g_A^2 M^2 m_N}{3 f_\pi^4}L_4,\ B^+_{Lb}=B^+_{Lc}=A^+_{Ld}=B^+_{Ld}=A^+_{Le}=B^+_{Le}=0,\\
+    %%%%%%%%%%%%%%%%%%%%%%%%
+    A^+_{Lf}=&-\frac{2 \pi ^2 g_A^2 m_N}{3 f_\pi^4}L_2+\frac{2 \pi ^2 g_A^2 m_N \left[M^2 \left(t-7 m_N^2\right)+6 m_N^2 t\right]}{3f_\pi^4 \left(4 m_N^2-t\right)}L_4+\frac{\pi ^2 g_A^2 m_N t \left(M^2-2 t\right)}{2 f_\pi^4 \left(4 m_N^2-t\right)}L_6\\
+    &+\frac{\pi ^2 g_A^2 m_N^3 \left(-2 M^4+5 M^2 t-2 t^2\right)}{f_\pi^4 \left(4 m_N^2-t\right)}L_{10},\ \ \ B^+_{Lf}=0
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^+_{Lg}=&A^+_{Lh}=\frac{\pi ^2 g_A^2 m_N \left(m_N^2-s\right)}{8 f_\pi^4 s}L_1-\frac{\pi ^2 g_A^2 m_N \left(m_N^2+3s\right)}{8 f_\pi^4 s}L_2+\frac{\pi ^2 g_A^2  m_N \left[\left(m_N^2-s\right)^2-M^2 \left(m_N^2+3 s\right)\right]}{8f_\pi^4 s}L_5\\
+   %%%%%%%%%%%%%%%%%%%%%%%%
+   B^+_{Lg}=&B^+_{Lh}=\frac{\pi ^2 g_A^2 \left(m_N^2+s\right)}{8 f_\pi^4 s}L_1+\frac{\pi ^2 g_A^2 \left(m_N^4+6 m_N^2s+s^2\right)}{8 f_\pi^4 s \left(s-m_N^2\right)}L_2\\
+   &+\frac{\pi ^2 g_A^2 \left[M^2 \left(m_N^4+6 m_N^2s+s^2\right)-\left(m_N^2-s\right)^2 \left(m_N^2+s\right)\right]}{8 f_\pi^4 s \left(s-m_N^2\right)}L_5\\
+   %%%%%%%%%%%%%%%%%%%%%%%%
+   A^+_{Li}=&A^+_{Lj}=-\frac{\pi ^2 g_A^2 m_N}{2 f_\pi^4}L_2-\frac{\pi ^2 g_A^2 M^2 m_N}{2 f_\pi^4}L_4,\ B^+_{Li}=B^+_{Lj}=-\frac{\pi ^2 g_A^2 \left(7 m_N^2+s\right)}{8 f_\pi^4 \left(m_N^2-s\right)}L_2-\frac{\pi ^2 g_A^2 M^2 \left(7m_N^2+s\right)}{8 f_\pi^4 \left(m_N^2-s\right)}L_4\\
+   %%%%%%%%%%%%%%%%%%%%%%%%
+   A^+_{Lk}=&A^+_{Ll}=\frac{\pi ^2 g_A^2 m_N}{6 f_\pi^4}L_1,\ B^+_{Lk}=B^+_{Ll}=\frac{\pi ^2 g_A^2 \left(3 m_N^2+s\right)}{12 f_\pi^4 \left(m_N^2-s\right)}L_1
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^+_{Lm}=&A^+_{Ln}=\frac{\pi ^2 g_A^4  m_N \left(m_N^2+3 s\right)}{32 F_{\pi}^4 s}L_1+\frac{\pi ^2 g_A^4 m_N \left(s-m_N^2\right)}{32 F_{\pi}^4 s}L_2+\frac{\pi ^2 g_A^4 M^2 m_N^3 \left[M^2-2 \left(m_N^2+s\right)\right]}{2F_{\pi}^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right] }L_3\\
+    &+\frac{\pi ^2 g_A^4 m_N^3\left(m_N^2-s\right) \left(-M^2+3 m_N^2+s\right)}{4 F_{\pi}^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_4\\
+    &+\frac{\pi ^2 g_A^4 m_N \left(m_N^2-s\right) \left[ s^2 \left(M^2-21 m_N^2\right)-\left(M^2-m_N^2\right)^3+s \left(M^4+10 M^2 m_N^2-11 m_N^4\right)-s^3 \right]}{32 F_{\pi}^4 s \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]} L_5 \\
+    &+\frac{\pi ^2 g_A^4 m_N^3 \left[2 M^6-4 M^4 \left(m_N^2+s\right)-M^2 \left(m_N^2-s\right)^2+\left(m_N^2-s\right)^2 \left(3 m_N^2+s\right)\right]}{4 F_{\pi}^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_8\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^+_{Lm}=&B^+_{Ln}=\frac{\pi ^2 g_A^4 \left(m_N^4+6 m_N^2 s+s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)}L_1-\frac{\pi ^2 g_A^4 \left(m_N^2+s\right)}{32 f_\pi^4 s}L_2+\frac{\pi ^2 g_A^4 m_N^4 \left(2 \left(m_N^2+s\right)-M^2\right)}{2 f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_4\\
+    &+\frac{\pi ^2 g_A^4 M^2 m_N^2 \left(M^2 \left(3 m_N^2+s\right)-5 m_N^4-10 m_N^2 s-s^2\right)}{4 f_\pi^4 \left(m_N^2-s\right) \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_3\\
+    &+\pi ^2 g_A^4 \big[ -3 s^3 \left(M^2+4 m_N^2\right)+m_N^2 \left(m_N^2-M^2\right)^3+s^2 \left(3 M^4+11 M^2 m_N^2-42 m_N^4\right)\\
+    & -s \left(M^6-2 M^4 m_N^2-11 M^2 m_N^4+12 m_N^6\right)+s^4 \big]L_5/ \left[32 f_\pi^4 s \left((m_N-M)^2-s\right) \left((m_N+M)^2-s\right)\right]\\
+   &+\frac{\pi ^2 g_A^4 m_N^2 \left[M^6 \left(3 m_N^2+s\right)-M^4 \left(5 m_N^4+10 m_N^2 s+s^2\right)+2 m_N^2 \left(m_N^2-s\right)^2 \left(-M^2+2 m_N^2+2s\right)\right]}{4 f_\pi^4 \left(m_N^2-s\right) \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_8
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+   A^+_{Lo}=&A^+_{Lp}=\frac{\pi ^2 g_A^2 m_N \left(m_N^2-s\right)}{8 f_\pi^4 s}L_1-\frac{\pi ^2 g_A^2 m_N\left(m_N^2-s\right)}{8 f_\pi^4 s}L_2-\frac{2 \pi ^2 g_A^2 M^2 m_N^3 \left(m_N^2-s\right)}{f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_3\\
+   &+\frac{\pi ^2 g_A^2 m_N^3 \left(m_N^2-s\right)\left(M^2+m_N^2-s\right)}{f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_4+\frac{\pi ^2 g_A^2 m_N^3 \left(m_N^2-s\right) \left(-M^2+m_N^2-s\right) \left(2M^2+m_N^2-s\right)}{f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_8\\
+   &+\frac{\pi ^2g_A^2 m_N \left(m_N^2-s\right) \left[-s^2 \left(7 M^2-3 m_N^2\right)-\left(M^2-m_N^2\right)^3+s \left(5 M^4+2 M^2 m_N^2-7 m_N^4\right)+3 s^3\right]}{8 f_\pi^4 s \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_5\\
+   %%%%%%%%%%%%%%%%%%%%%%%%%
+   B^+_{Lo}=&A^+_{Lp}=\frac{\pi ^2 g_A^2 \left(m_N^2+s\right)}{8 f_\pi^4 s}L_1-\frac{\pi ^2 g_A^2 m_N^2}{8 f_\pi^4 s}L_2+\frac{\pi ^2g_A^2 M^2 m_N^2 \left(M^2-3 m_N^2-s\right)}{f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_3\\
+   &-\frac{\pi ^2 g_A^2 \left[M^6-2 M^4 \left(m_N^2+s\right)+M^2 \left(m_N^2-s\right)^2+16 m_N^4\left(s-m_N^2\right)\right]}{8 f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_4\\
+   &+\frac{\pi ^2g_A^2 \left(m_N^2-s\right) \left(-M^2+m_N^2+s\right) \left(M^4-2 M^2 \left(m_N^2+s\right)+m_N^4-10 m_N^2s+s^2\right)}{8 f_\pi^4 s \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_5\\
+   &+\frac{\pi ^2 g_A^2 m_N^2 \left(M^6-M^4 \left(3 m_N^2+s\right)+2 \left(m_N^3-m_N s\right)^2\right)}{f_\pi^4 \left[(m_N-M)^2-s\right] \left[(m_N+M)^2-s\right]}L_8
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+   A^+_{Lq}=&\frac{\pi ^2 m_N \left(m_N^2-s\right)}{4 f_\pi^4 s}L_1+\frac{\pi ^2 m_N \left(s-m_N^2\right)}{4 f_\pi^4s}L_2+\frac{\pi ^2 m_N \left(m_N^2-s\right) \left(-M^2+m_N^2-s\right)}{4 f_\pi^4 s}L_5\\
+   %%%%%%%%%%%%%%%%%%%%%%%%%
+   B^+_{Lq}=&\frac{\pi ^2 \left(2 m_N^2-s\right)}{8 f_\pi^4 s}L_1-\frac{\pi ^2 \left(m_N^2+s\right)}{4 f_\pi^4 s}L_2+\frac{\pi ^2 \left[\left(m_N^2-s\right)^2-M^2 \left(m_N^2+s\right)\right]}{4 f_\pi^4 s}L_5
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+   A^+_{Lr}=&\frac{3 g_A^4 \pi ^2 \left(m_N^2-s\right) \left(4 M^2-t\right) m_N^5}{2 f_\pi^4 \left[M^4-2 \left(m_N^2+s\right)M^2+(m_N^2-s)^2+st\right]}L_9-\frac{3 g_A^4 M^4 \pi ^2 m_N^3}{f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right]}L_3\\
+   &+\frac{3 g_A^4 \pi ^2 \left(m_N^2-s\right) \left(M^2-m_N^2+s\right) \left(4 M^2+2m_N^2-2 s-t\right) m_N^5}{2 f_\pi^4 \left[M^4-2 \left(m_N^2+s\right) M^2+(m_N^2-s)^2 +st\right]}L_{12}\\
+   &-\frac{3g_A^4 \pi ^2 \left[12 M^4+4 \left(5 m_N^2-3 s-2 t\right) M^2+\left(4 m_N^2-t\right) \left(2 m_N^2-2 s+3 t\right)\right]m_N^3}{8 f_\pi^4 \left(t-4 m_N^2\right)^2}L_7\\
+   &-3 g_A^4 m_N^3 \pi^2 L_8 \bigg\{2 M^{10}-4 \left(m_N^2+s\right)M^8+\left(m_N^4-4 s m_N^2+s (3 s+2 t)\right) M^6+\left(m_N^6+3 s m_N^4-s^2 m_N^2-3 s^3\right) M^4\\
+   &+\left(m_N^2-s\right)\left(m_N^6+3 s m_N^4-s (s+3 t) m_N^2-s^2 (3 s+t)\right) M^2-\left(m_N^2-s\right)^3 \left(m_N^4-s (s+t)\right)\bigg\}\\
+   &/\bigg\{2 f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right] \left(M^4-2 \left(m_N^2+s\right)M^2+m_N^4-2 m_N^2 s+s (s+t)\right)\bigg\}\\
+   &-3 g_A^4 m_N^3 L_{11} \pi ^2 \bigg\{6 M^{10}-\left(14 m_N^2+18 s+t\right) M^8+\left(2m_N^4+4 (3 s+4 t) m_N^2+18 s^2-3 t^2+6 s t\right) M^6\\
+   &+\left(14 m_N^6-(2 s+29 t) m_N^4-6 \left(s^2+4 t s-t^2\right) m_N^2+s\left(-6 s^2-3 t s+5 t^2\right)\right) M^4\\
+   &+\left(4 m_N^2-t\right) \left(14 m_N^6-(10 s+t) m_N^4-2 s (3 s+2 t) m_N^2+s \left(2 s^2+5 ts+3 t^2\right)\right) M^2\\
+   &+2 m_N^2 \left(m_N^2-s\right) \left(2 m_N^2-2 s-t\right) \left(t-4m_N^2\right)^2 \bigg\}/\bigg\{4f_\pi^4 \left(t-4 m_N^2\right)^2 \\
+   &\left[M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s (s+t)\right]\bigg\}\\
+   &+3 g_A^4 m_N \pi^2 L_5 \bigg\{-\left(\left(m_N^2+3 s\right) M^6\right)+\left(3 m_N^4+18 s m_N^2+11 s^2\right) M^4-\left(m_N^2-s\right)^2\left(3 m_N^2+13 s\right) M^2\\
+   &+\left(m_N^2-5 s\right) \left(m_N^2-s\right)^3 \bigg\}/ \bigg\{32 f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right] s\bigg\}\\
+   &+\frac{3 g_A^4 \pi ^2 \left[-4 m_N^4+(12 s+t) m_N^2+s\left(8 M^2-8 s-5 t\right)\right] m_N}{32 f_\pi^4 s \left(4 m_N^2-t\right)}(L_2-L_1)\\
+   &+3 g_A^4 m_N L_4 \pi ^2 \bigg\{\left(10 m_N^2-t\right) M^8+\left(-2 m_N^4-2 (15 s+4 t) m_N^2+t (3 s+t)\right) M^6\\
+   &+\left(6 m_N^6+(11 t-36 s)m_N^4+\left(30 s^2+20 t s-2 t^2\right) m_N^2-s t (3 s+2 t)\right) M^4\\
+   &+\left(50 m_N^8-6 (13 s+7 t) m_N^6+\left(38 s^2+21 t s+7t^2\right) m_N^4-2 s^2 (5 s+6 t) m_N^2+s^2 t (s+t)\right) M^2\\
+   &+2 \left(m_N^3-m_N s\right)^2 \left(4 m_N^2-t\right) t\bigg\}/\bigg\{4 f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right] \left(t-4 m_N^2\right)^2\bigg\}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    B^+_{Lr}=&3g_A^4 \pi ^2 L_5\bigg\{-\left(m_N^2+s\right) M^6+\left(3 m_N^4+10 s m_N^2+3 s^2\right) M^4-3 \left(m_N^2-s\right)^2\left(m_N^2+s\right) M^2\\
+    &+\left(m_N^2-s\right)^2 \left(m_N^4-10 s m_N^2+s^2\right) \bigg\}/\bigg\{32 f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right] s\bigg\}\\
+    &-\frac{3 m_N^2 \pi ^2 \left(2 M^2+4 m_N^2-t\right)g_A^4}{8 f_\pi^4 \left(4 m_N^2-t\right)}L_7\\
+    &+3 L_4 g_A^4 M^2 \pi^2 \bigg\{38 m_N^6-3 (4 s+3 t) m_N^4+2 s (3 s+t)m_N^2+M^4 \left(6 m_N^2-t\right)\\
+    &-2 M^2 \left(m_N^2+s\right) \left(6 m_N^2-t\right)-s^2 t\bigg\}/\bigg\{8 f_\pi^4\left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right] \left(4 m_N^2-t\right)\bigg\}\\
+    &-3 L_{11} m_N^2 g_A^4 \pi^2 \bigg\{M^8-2 \left(m_N^2+s\right) M^6+\left(m_N^4-2 s m_N^2+s (s+t)\right) M^4+2 \left(m_N^2-s\right) \left(m_N t-4m_N^3\right)^2\bigg\}\\
+    &/\bigg\{4 f_\pi^4 \left(4 m_N^2-t\right) \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s(s+t)\right)\bigg\}\\
+    &+3 L_8 m_N^2 g_A^4 \pi^2 \bigg\{-M^{10}+\left(m_N^2+3 s\right) M^8+\left(m_N^4+2 s m_N^2-s (3 s+t)\right)M^6\\
+    &+\left(m_N^2-s\right) \left(m_N^4+4 s m_N^2-s (s+t)\right) M^4-2 m_N^2 \left(m_N^2-s\right) \left(2 m_N^4+4 sm_N^2+s (2 s-t)\right) M^2\\
+    &+2 m_N^2 \left(m_N^2-s\right)^3 \left(m_N^2+s\right)\bigg\}/\bigg\{2 f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right]\\
+    &\left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s(s+t)\right)\bigg\}\\
+    &-\frac{3 M^2 m_N^2 \pi ^2 \left(M^2+m_N^2-s\right) g_A^4}{2 f_\pi^4 \left[(M-m_N)^2-s\right] \left[(M+m_N)^2-s\right]}L_3+\frac{3 \pi ^2 \left(m_N^2-3 s\right) g_A^4}{32 f_\pi^4 s}L_1-\frac{3 \pi ^2\left(m_N^2-3 s\right) g_A^4}{32 f_\pi^4 s}L_2\\
+    &-\frac{3 m_N^4 \pi ^2 \left(2 M^4-2 \left(3 m_N^2+s\right)M^2+\left(m_N^2+s\right) t\right) g_A^4}{2 f_\pi^4 \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s(s+t)\right)}L_9\\
+    &-\frac{3 m_N^4 \pi ^2 \left(2 M^6-2 \left(3 m_N^2+s\right) M^4+\left(m_N^2+s\right) tM^2+\left(m_N^2-s\right)^2 \left(4 m_N^2-t\right)\right) g_A^4}{2 f_\pi^4 \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2m_N^2 s+s (s+t)\right)}L_{12}
+   \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^+_{Ls}=&\frac{3 \pi ^2 g_A^4 m_N \left(m_N^2+3 s\right)}{32 f_\pi^4 s}L_1-\frac{3 \pi ^2 g_A^4 m_N\left(m_N^4+10 m_N^2 s+5 s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)}L_2\\
+    &+\frac{3 \pi ^2 g_A^4 m_N\left(\left(m_N^2-s\right)^2 \left(m_N^2+3 s\right)-M^2 \left(m_N^4+10 m_N^2 s+5 s^2\right)\right)}{32 f_\pi^4 s\left(m_N^2-s\right)}L_5\\
+   %%%%%%%%%%%%%%%%%%%%%%%%%
+   B^+_{Ls}=&\frac{3 \pi ^2 g_A^4 \left(m_N^4+6 m_N^2 s+s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)}L_1-\frac{3 \pi ^2 g_A^4 \left(m_N^2+s\right) \left(m_N^4+14 m_N^2 s+s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)^2}L_2\\
+   &+\frac{3 \pi ^2 g_A^4 \left(\left(m_N^2-s\right)^2 \left(m_N^4+6 m_N^2 s+s^2\right)-M^2 \left(m_N^6+15 m_N^4 s+15 m_N^2s^2+s^3\right)\right)}{32 f_\pi^4 s \left(m_N^2-s\right)^2}L_5
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^-_{La}=&\frac{\pi ^2 g_A^2 m_N (s-u)}{4 f_\pi^4 \left(4 m_N^2-t\right)}L_1+\frac{\pi ^2 g_A^2 M^2 m_N^3 (s-u)\left(3 M^2-4 m_N^2+t\right)}{2 f_\pi^4 \left(t-4 m_N^2\right)^2}L_{11}+\frac{\pi ^2 g_A^2 m_N (u-s)}{4 f_\pi^4 \left(4m_N^2-t\right)}L_2\\
+    &-\frac{\pi ^2 g_A^2 M^2 m_N \left(10 m_N^2-t\right) (s-u)}{4 f_\pi^4 \left(t-4m_N^2\right)^2}L_4+\frac{\pi ^2 g_A^2 m_N^3 (s-u) \left(6 M^2+4 m_N^2-t\right)}{4 f_\pi^4 \left(t-4 m_N^2\right)^2}L_7\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^-_{La}=&-\frac{\pi ^2 g_A^2}{8 f_\pi^4}L_1+\frac{\pi ^2 g_A^2 M^4 m_N^2}{2 f_\pi^4 \left(t-4 m_N^2\right)}L_{11}+\frac{\pi^2 g_A^2}{4 f_\pi^4}L_2+\frac{\pi ^2 g_A^2 M^2 \left(6 m_N^2-t\right)}{4 f_\pi^4 \left(4 m_N^2-t\right)}L_4-\frac{\pi ^2 g_A^2  m_N^2 \left(2 M^2+4 m_N^2-t\right)}{4 f_\pi^4 \left(4 m_N^2-t\right)}L_7\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Lb}=&A^-_{Lc}=A^-_{Ld}=A^-_{Le}=0,\ B^-_{Lb}=B^-_{Lc}=-\frac{\pi ^2 g_A^2}{4 f_\pi^4}L_2-\frac{\pi ^2 g_A^2 M^2}{4 f_\pi^4}L_4,\ B^-_{Ld}=\frac{5 \pi ^2}{24 f_\pi^4}L_1,\\
+    B^-_{Le}=&\frac{\pi ^2 \left(t-4 M^2\right)}{12 f_\pi^4}L_6-\frac{\pi ^2 }{6 f_\pi^4}L_1 \\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Lf}=&-\frac{\pi ^2 g_A^2 m_N (s-u)}{f_\pi^4 \left(4 m_N^2-t\right)}L_1+\frac{\pi ^2 g_A^2 m_N^3 (s-u) \left[6M^4+(t-4 M^2 )\left(2 m_N^2+t\right)\right]}{f_\pi^4 \left(t-4 m_N^2\right)^2}L_{10}+\frac{\pi ^2 g_A^2 m_N (s-u)}{f_\pi^4 \left(4 m_N^2-t\right)}L_2\\
+    &-\frac{\pi ^2 g_A^2 m_N (s-u) \left[M^2 \left(t-10 m_N^2\right)+2m_N^2 \left(2 m_N^2+t\right)\right]}{f_\pi^4 \left(t-4 m_N^2\right)^2}L_4+\frac{3 \pi ^2 g_A^2 m_N^3 \left(t-2M^2\right) (s-u)}{f_\pi^4 \left(t-4 m_N^2\right)^2}L_6\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^-_{Lf}=&\frac{\pi ^2 g_A^2}{6 f_\pi^4}L_1-\frac{2 \pi ^2 g_A^2 m_N^2 \left(M^4-4 M^2 m_N^2+m_N^2t\right)}{f_\pi^4 \left(4 m_N^2-t\right)}L_{10}+\frac{2 \pi ^2 g_A^2 m_N^2 \left(2 m_N^2-M^2\right)}{f_\pi^4 \left(4m_N^2-t\right)}L_4\\
+    &+\frac{\pi ^2 g_A^2 \left[4M^2 \left(10 m_N^2-t\right)+t \left(t-16 m_N^2\right)\right]}{12 f_\pi^4\left(4 m_N^2-t\right)} L_6
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^-_{Lg}=&A^-_{Lh}=\frac{\pi ^2 g_A^2 m_N \left(m_N^2-s\right)}{8 f_\pi^4 s}L_1-\frac{\pi ^2 g_A^2 m_N \left(m_N^2+3s\right)}{8 f_\pi^4 s}L_2+\frac{\pi ^2 g_A^2 m_N \left[\left(m_N^2-s\right)^2-M^2 \left(m_N^2+3 s\right)\right]}{8f_\pi^4 s}L_5\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^-_{Lg}=&B^-_{Lh}=\frac{\pi ^2 g_A^2 \left(m_N^2+s\right)}{8 f_\pi^4 s}L_1+\frac{\pi ^2 g_A^2 \left(m_N^4+6 m_N^2s+s^2\right)}{8 f_\pi^4 s \left(s-m_N^2\right)}L_2\\
+    &+\frac{\pi ^2 g_A^2 \left[M^2 \left(m_N^4+6 m_N^2s+s^2\right)-\left(m_N^2-s\right)^2 \left(m_N^2+s\right)\right]}{8 f_\pi^4 s \left(s-m_N^2\right)}L_5\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Li}=&A^-_{Lj}=-\frac{\pi ^2 g_A^2 m_N}{2 f_\pi^4}L_2-\frac{\pi ^2 g_A^2 M^2 m_N}{2 f_\pi^4}L_4\ ,B^-_{Li}=B^-_{Lj}=-\frac{\pi ^2 g_A^2 \left(7 m_N^2+s\right)}{8 f_\pi^4 \left(m_N^2-s\right)}L_2-\frac{\pi ^2 g_A^2 M^2 \left(7m_N^2+s\right)}{8 f_\pi^4 \left(m_N^2-s\right)}L_4\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Lk}=&A^-_{Ll}=\frac{\pi ^2 g_A^2 m_N}{6 f_\pi^4}L_1\ ,B^-_{Lk}=B^-_{Ll}=\frac{\pi ^2 g_A^2 \left(3 m_N^2+s\right)}{12 f_\pi^4 \left(m_N^2-s\right)}L_1
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^-_{Lm}=&A^-_{Ln}=\frac{\pi ^2 g_A^4 m_N \left(m_N^2+3 s\right)}{32 f_\pi^4 s}L_1+\frac{\pi ^2 g_A^4 m_N\left(s-m_N^2\right)}{32 f_\pi^4 s}L_2+\frac{\pi ^2 g_A^4 M^2 m_N^3 \left(M^2-2 \left(m_N^2+s\right)\right)}{2 f_\pi^4\left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_3\\
+    &+\frac{\pi ^2 g_A^4 m_N^3 \left(m_N^2-s\right) \left(-M^2+3m_N^2+s\right)}{4 f_\pi^4 \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_4\\
+    &+\pi ^2 g_A^4 m_N L_5 \left(m_N^2-s\right) \bigg\{-M^6+M^4 \left(3 m_N^2+s\right)+M^2 \left(-3 m_N^4+10 m_N^2 s+s^2\right)+m_N^6-11 m_N^4 s\\
+    &-21m_N^2 s^2-s^3\bigg\}/\bigg\{32 f_\pi^4 s \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)\bigg\}\\
+    &+\frac{\pi ^2 g_A^4 m_N^3\left(2 M^6-4 M^4 \left(m_N^2+s\right)-M^2 \left(m_N^2-s\right)^2+\left(m_N^2-s\right)^2 \left(3 m_N^2+s\right)\right)}{4 f_\pi^4\left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_8\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^-_{Lm}=&B^-_{Ln}=\frac{\pi ^2 g_A^4 \left(m_N^4+6 m_N^2 s+s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)}L_1-\frac{\pi ^2 g_A^4\left(m_N^2+s\right)}{32 f_\pi^4 s}L_2\\
+    &+\frac{\pi ^2 g_A^4 M^2 m_N^2 \left(M^2 \left(3 m_N^2+s\right)-5 m_N^4-10m_N^2 s-s^2\right)}{4 f_\pi^4 \left(m_N^2-s\right) \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_3+\frac{\pi ^2 g_A^4 m_N^4 \left(2 \left(m_N^2+s\right)-M^2\right)}{2 f_\pi^4 \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_4\\
+    &-\pi^2 g_A^4 L_5 \bigg\{M^6 \left(m_N^2+s\right)-M^4 \left(3 m_N^4+2 m_N^2 s+3 s^2\right)+M^2 \left(3 m_N^6-11 m_N^4 s-11m_N^2 s^2+3 s^3\right)\\
+    &-m_N^8+12 m_N^6 s+42 m_N^4 s^2+12 m_N^2 s^3-s^4\bigg\}/\bigg\{32 f_\pi^4 s \left((M-m_N)^2-s\right)\left((M+m_N)^2-s\right)\bigg\}\\
+    &+\pi^2 g_A^4 L_8 m_N^2 \bigg\{M^6 \left(3 m_N^2+s\right)-M^4 \left(5 m_N^4+10 m_N^2s+s^2\right)-2 M^2 \left(m_N^3-m_N s\right)^2\\
+    &+4 \left(m_N^2+s\right) \left(m_N^3-m_N s\right)^2\bigg\}/\bigg\{4 f_\pi^4\left(m_N^2-s\right) \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)\bigg\}\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Lo}=&A^-_{Lp}=0,\ B^-_{Lo}=B^-_{Lp}=0\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Lq}=&\frac{\pi ^2 m_N \left(m_N^2-s\right)}{8 f_\pi^4 s}L_1+\frac{\pi ^2 m_N \left(s-m_N^2\right)}{8 f_\pi^4s}L_2+\frac{\pi ^2 m_N \left(m_N^2-s\right) \left(-M^2+m_N^2-s\right)}{8 f_\pi^4 s}L_5\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^-_{Lq}=&\frac{\pi ^2 \left(2 m_N^2-s\right)}{16 f_\pi^4 s}L_1-\frac{\pi ^2 \left(m_N^2+s\right)}{8 f_\pi^4 s}L_2+\frac{\pi ^2 \left(\left(m_N^2-s\right)^2-M^2 \left(m_N^2+s\right)\right)}{8 f_\pi^4 s}L_5
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^-_{Lr}=&-\frac{g_A^4 \pi ^2 \left(m_N^2-s\right) \left(4 M^2-t\right) m_N^5}{2 f_\pi^4 \left(M^4-2 \left(m_N^2+s\right)M^2+m_N^4-2 m_N^2 s+s (s+t)\right)}L_9\\
+    &+\frac{g_A^4 \pi ^2 \left(m_N^2-s\right) \left(-M^2+m_N^2-s\right) \left(4 M^2+2m_N^2-2 s-t\right) m_N^5}{2 f_\pi^4 \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s (s+t)\right)}L_{12}\\
+    &+\frac{g_A^4 \pi ^2 \left(12 M^4+4 \left(5 m_N^2-3 s-2 t\right) M^2+\left(4 m_N^2-t\right) \left(2 m_N^2-2 s+3 t\right)\right) m_N^3}{8f_\pi^4 \left(t-4 m_N^2\right)^2}L_7\\
+    &-g_A^4 \pi^2 m_N^3 L_8 \bigg\{-2 M^{10}+4 \left(m_N^2+s\right) M^8-\left(m_N^4-4 sm_N^2+s (3 s+2 t)\right) M^6\\
+    &+\left(-m_N^6-3 s m_N^4+s^2 m_N^2+3 s^3\right) M^4-\left(m_N^2-s\right) \left(m_N^6+3 sm_N^4-s (s+3 t) m_N^2-s^2 (3 s+t)\right) M^2\\
+    &+\left(m_N^2-s\right)^3 \left(m_N^4-s (s+t)\right) \bigg\}/\bigg\{2 f_\pi^4\left((M-m_N)^2-s\right) \\
+    &\left((M+m_N)^2-s\right) \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s(s+t)\right)\bigg\}\\
+   &+g_A^4 m_N^3 L_{11} \pi^2 \bigg\{6 M^{10}-\left(14 m_N^2+18 s+t\right) M^8+\left(2 m_N^4+4 (3 s+4 t) m_N^2+18 s^2-3t^2+6 s t\right) M^6\\
+   &+\left(14 m_N^6-(2 s+29 t) m_N^4-6 \left(s^2+4 t s-t^2\right) m_N^2+s \left(-6 s^2-3 t s+5 t^2\right)\right) M^4\\
+   &+\left(4m_N^2-t\right) \left(14 m_N^6-(10 s+t) m_N^4-2 s (3 s+2 t) m_N^2+s \left(2 s^2+5 t s+3 t^2\right)\right) M^2\\
+   &+2 m_N^2\left(m_N^2-s\right) \left(2 m_N^2-2 s-t\right) \left(t-4 m_N^2\right)^2\bigg\}/\bigg\{4 f_\pi^4 \left(t-4 m_N^2\right)^2\\
+   &\left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s (s+t)\right)\bigg\}+\frac{g_A^4 M^4 \pi ^2 m_N^3}{f_\pi^4
+   \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_3\\
+   &-g_A^4 m_N L_5 \pi^2 \bigg\{-\left(\left(m_N^2+3 s\right) M^6\right)+\left(3m_N^4+18 s m_N^2+11 s^2\right) M^4-\left(m_N^2-s\right)^2 \left(3 m_N^2+13 s\right) M^2\\
+   &+\left(m_N^2-5 s\right)\left(m_N^2-s\right)^3 \bigg\}/\bigg\{32 f_\pi^4 \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right) s\bigg\}\\
+   &-\frac{g_A^4 \pi^2 \left(4 m_N^4-(12 s+t) m_N^2+s \left(-8 M^2+8 s+5 t\right)\right) m_N}{32 f_\pi^4 s \left(4 m_N^2-t\right)}L_1\\
+   &+\frac{g_A^4 \pi ^2 \left(4 m_N^4-(12 s+t) m_N^2+s \left(-8 M^2+8 s+5 t\right)\right) m_N}{32 f_\pi^4 s \left(4m_N^2-t\right)}L_2\\
+   &-g_A^4 m_N L_4 \pi ^2 \bigg\{\left(10 m_N^2-t\right) M^8+\left(-2 m_N^4-2 (15 s+4 t) m_N^2+t (3 s+t)\right)M^6\\
+   &+\left(6 m_N^6+(11 t-36 s) m_N^4+\left(30 s^2+20 t s-2 t^2\right) m_N^2-s t (3 s+2 t)\right) M^4\\
+   &+\left(50 m_N^8-6 (13 s+7 t)m_N^6+\left(38 s^2+21 t s+7 t^2\right) m_N^4-2 s^2 (5 s+6 t) m_N^2+s^2 t (s+t)\right) M^2\\
+   &+2 \left(m_N^3-m_N s\right)^2 \left(4m_N^2-t\right) t \bigg\}/\bigg\{4 f_\pi^4 \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right) \left(t-4 m_N^2\right)^2\bigg\}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    B^-_{Lr}=&g_A^4 \pi ^2 L_5 \bigg\{\left(m_N^2+s\right) M^6-\left(3 m_N^4+10 s m_N^2+3 s^2\right) M^4+3 \left(m_N^2-s\right)^2\left(m_N^2+s\right) M^2\\
+    &-\left(m_N^2-s\right)^2 \left(m_N^4-10 s m_N^2+s^2\right) \bigg\}/\bigg\{32 f_\pi^4\left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right) s\bigg\}\\
+    &+\frac{ m_N^2 \pi ^2 \left(2 M^2+4 m_N^2-t\right) g_A^4}{8f_\pi^4 \left(4 m_N^2-t\right)}L_7-L_4 M^2g_A^4 \pi^2 \bigg\{38 m_N^6-3 (4 s+3 t) m_N^4+2 s (3 s+t) m_N^2\\
+    &+M^4 \left(6m_N^2-t\right)-2 M^2 \left(m_N^2+s\right) \left(6 m_N^2-t\right)-s^2 t \bigg\}/\bigg\{8 f_\pi^4 \left((M-m_N)^2-s\right)\\
+    &\left((M+m_N)^2-s\right) \left(4 m_N^2-t\right)\bigg\}+L_{11} m_N^2 g_A^4 \pi^2 \bigg\{M^8-2 \left(m_N^2+s\right) M^6+\left(m_N^4-2s m_N^2+s (s+t)\right) M^4\\
+    &+2 \left(m_N^2-s\right) \left(m_N t-4 m_N^3\right)^2 \bigg\}/\bigg\{4 f_\pi^4 \left(4m_N^2-t\right) \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s (s+t)\right)\bigg\}\\
+    &-L_8 m_N^2 g_A^4 \pi^2\bigg\{-M^{10}+\left(m_N^2+3 s\right) M^8+\left(m_N^4+2 s m_N^2-s (3 s+t)\right) M^6\\
+    &+\left(m_N^2-s\right) \left(m_N^4+4 sm_N^2-s (s+t)\right) M^4-2 m_N^2 \left(m_N^2-s\right) \left(2 m_N^4+4 s m_N^2+s (2 s-t)\right) M^2\\
+    &+2 m_N^2\left(m_N^2-s\right)^3 \left(m_N^2+s\right)\bigg\}/\bigg\{2 f_\pi^4 \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)\\
+    &\left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2 m_N^2 s+s (s+t)\right)\bigg\}+\frac{ M^2 m_N^2 \pi ^2 \left(M^2+m_N^2-s\right)g_A^4}{2 f_\pi^4 \left((M-m_N)^2-s\right) \left((M+m_N)^2-s\right)}L_3\\
+    &-\frac{ \pi ^2 \left(m_N^2-3 s\right) g_A^4}{32f_\pi^4 s}L_1+\frac{\pi ^2 \left(m_N^2-3 s\right) g_A^4}{32 f_\pi^4 s}L_2-\frac{m_N^4 \pi ^2 \left(-2 M^4+2 \left(3m_N^2+s\right) M^2-\left(m_N^2+s\right) t\right) g_A^4}{2 f_\pi^4 \left(M^4-2 \left(m_N^2+s\right) M^2+(m_N^2-s)^2+st\right)}L_9\\
+    &+\frac{ m_N^4 \pi ^2 \left(2 M^6-2 \left(3 m_N^2+s\right) M^4+\left(m_N^2+s\right) tM^2+\left(m_N^2-s\right)^2 \left(4 m_N^2-t\right)\right) g_A^4}{2 f_\pi^4 \left(M^4-2 \left(m_N^2+s\right) M^2+m_N^4-2m_N^2 s+s (s+t)\right)}L_{12}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+    A^-_{Ls}=&\frac{3 \pi ^2 g_A^4 m_N \left(m_N^2+3 s\right)}{32 f_\pi^4 s}L_1-\frac{3 \pi ^2 g_A^4 m_N\left(m_N^4+10 m_N^2 s+5 s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)}L_2\\
+    &+\frac{3 \pi ^2 g_A^4 m_N\left(\left(m_N^2-s\right)^2 \left(m_N^2+3 s\right)-M^2 \left(m_N^4+10 m_N^2 s+5 s^2\right)\right)}{32 f_\pi^4 s\left(m_N^2-s\right)}L_5\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    B^-_{Ls}=&\frac{3 \pi ^2 g_A^4 \left(m_N^4+6 m_N^2 s+s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)}L_1-\frac{3 \pi ^2 g_A^4 \left(m_N^2+s\right) \left(m_N^4+14 m_N^2 s+s^2\right)}{32 f_\pi^4 s \left(m_N^2-s\right)^2}L_2\\
+    &+\frac{3 \pi ^2 g_A^4 \left(\left(m_N^2-s\right)^2 \left(m_N^4+6 m_N^2 s+s^2\right)-M^2 \left(m_N^6+15 m_N^4 s+15 m_N^2s^2+s^3\right)\right)}{32 f_\pi^4 s \left(m_N^2-s\right)^2}L_5\\
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    A^-_{Lt}=&B^-_{Lt}=0
+    \end{aligned}
+\end{equation}
+
+Secondly, we give the multiplication of terms proportional to $\frac{1}{\epsilon}$ in the loop function and terms proportional to $\epsilon$ in the coefficient of the loop function:
+\begin{equation}
+    \begin{aligned}
+        A^+_{\epsilon}=&B^+_{\epsilon}=0,\ A^-_{\epsilon}=\frac{g_A^2 m_N^3 (g_A^2-5)(s-u)}{64f_\pi^4 \pi^2(4m_N^2-t)}\\
+        B^-_{\epsilon}=&\frac{2(g_A^2-1)(6M^2-t)+g_A^2m_N^2(5-g_A^2)}{64\pi^2 f_\pi^4}
+    \end{aligned}
+\end{equation}
+
+
+\subsection{Chiral perturbation theory}
+The Lagrangian in ChPT can be expanded as $\mathcal{L}=\sum_{i=1}^{\infty}\mathcal{L}_{\pi \pi}^{(2i)}+\sum_{j=1}^{\infty}\mathcal{L}_{\pi N}^{(j)}$, where the magnitudes of $\mathcal{L}_{\pi \pi}^{(2i)}$ and $\mathcal{L}_{\pi N}^{(j)}$ are $O(p^{2i})$ and $O(p^j)$, respectively. Terms of the meson part for calculation up to $O(p^3)$ are~\cite{ap84gas}
+\begin{equation}
+    \begin{aligned}
+    \mathcal{L}_{\pi \pi}^{(2)}&=\frac{F^2}{4}{\rm Tr}\left[ \nabla_\mu U \left(\nabla^\mu U\right)^\dagger \right]+\frac{F^2}{4}{\rm Tr}\left[ \chi U^\dagger+U \chi^\dagger  \right]\\
+    \mathcal{L}_{\pi \pi}^{(4)}&=\frac{l_3+l_4}{16}\left[ {\rm Tr}\left( \chi U^\dagger+U \chi^\dagger \right) \right]^2+\frac{l_4}{8}{\rm Tr}\left[\nabla_\mu U \left( \nabla^\mu U\right)^\dagger \right]{\rm Tr}\left( \chi U^\dagger+U\chi^\dagger \right)
+    \end{aligned}
+\end{equation}
+where $F$ is the pion decay constant in the chiral limit. $\chi=M^2 \mathbf{1}$ in the isospin symmetry and $M$ is the lowest order pion mass. Pions are contained in the ${\rm SU}(2)$ matrix:
+\begin{equation}
+U={\rm exp} \left( i\frac{\phi}{F} \right),\ \phi=\vec{\phi}\cdot \vec{\tau}=\begin{pmatrix}
+\pi_0&\sqrt{2}\pi^+\\\sqrt{2}\pi^-&-\pi_0 
+      \end{pmatrix}\ ,
+\end{equation}
+The covariant derivative acting on the pion fields is defined as $\nabla_\mu U=\partial_\mu U-i r_\mu \cdot U+i U\cdot l_\mu$, where $l_\mu$ and $r_\mu$ are the external fields. The required Baryon Lagrangians for calculation up to $O(p^3)$ are~\cite{ap00fet}
+\begin{equation}
+\begin{aligned}
+    \mathcal{L}_{\pi N}^{(1)}=\overline{\Psi}&\left\{ i \slashed{D}-m +\frac{g}{2}\gamma^\mu \gamma_5 u_\mu \right\}\Psi\ ,\\
+    \mathcal{L}_{\pi N}^{(2)}=\overline{\Psi}&\left\{ c_1 {\rm Tr}[\chi_+]-\frac{c_2}{4m^2}{\rm Tr}[u_\mu u_\nu]\left( D^\mu D^\nu +\mathrm{h.c.} \right) +\frac{c_3}{2}{\rm Tr}[u^\mu u_\mu]-\frac{c_4}{4}\gamma^\mu \gamma^\nu[u_\mu,u_\nu]\right\}\Psi ,\\
+    \mathcal{L}_{\pi N}^{(3)}=\overline{\Psi} & \left\{-\frac{d_1+d_2}{4 m}\left(\left[u_\mu,\left[D_\nu, u^\mu\right]+\left[D^\mu, u_\nu\right]\right] D^\nu+\text { h.c. }\right)\right. \\
+    & +\frac{d_3}{12 m^3}\left(\left[u_\mu,\left[D_\nu, u_\lambda\right]\right]\left(D^\mu D^\nu D^\lambda+\text { sym. }\right)+\text { h.c. }\right)+i \frac{d_5}{2 m}\left(\left[\chi_{-}, u_\mu\right] D^\mu+\text { h.c. }\right) \\
+    & +i \frac{d_{14}-d_{15}}{8 m}\left(\sigma^{\mu \nu}{\rm Tr}\left[ \left[D_\lambda, u_\mu\right] u_\nu-u_\mu\left[D_\nu, u_\lambda\right]\right] D^\lambda+\text { h.c. }\right)+\frac{d_{16}}{2} \gamma^\mu \gamma^5 {\rm Tr}\left[\chi_{+}\right] u_\mu \\
+    & \left.+\frac{i d_{18}}{2} \gamma^\mu \gamma^5\left[D_\mu, \chi_{-}\right]\right\} \Psi .
+\end{aligned}
+\end{equation}
+where $m$ and $g$ are the bare nucleon mass and the bare axial-vector coupling constant, respectively. $c_i, d_i$ are the low energy constants. The chiral vielbein and the covariant derivative with respect to the nucleon field are defined as
+\begin{equation}
+    \begin{aligned}
+        &u_\mu=i \left[ u^\dagger \left( \partial_\mu -i r_\mu \right)u-u\left( \partial_\mu -i l_\mu \right)u^\dagger \right]\\
+        &D_\mu =\partial_\mu +\Gamma_\mu\ ,\\
+        &\Gamma_\mu=\frac{1}{2}\left[ u^\dagger \left( \partial_\mu -i r_\mu \right)u+u\left( \partial_\mu -i l_\mu \right)u^\dagger \right]\ ,\\
+        &u=\sqrt{U}={\rm exp}\left(\frac{i\phi}{2F}\right)\ .
+    \end{aligned}
+\end{equation}
+According to the powering counting rule~\cite{npb91wei}, the magnitude of a diagram with $L$ loops, $I_\phi$ inner pion lines, $I_N$ inner nucleon lines and $N^{(k)}$ vertices from $O(p^k)$ Lagrangian are $O(p^D)$, where $D=4L-2I_{\phi}-I_N+\sum_{k}^{\infty}kN^{(k)}$.
+
+\section{Renormalization}\label{sec:r}
+For the renormalization of amplitudes calculated in ChPT, the dimensional regularization and $\overline{{\rm MS}}-1$ subtraction scheme are used to determine the ultraviolet(UV) divergent pieces, and the dimensional regularization scale are taken as $\mu=m_N$. Then the EOMS scheme is used to determine the power counting breaking(PCB) pieces. All the UV divergent terms and the PCB terms are canceled by counter terms in the Lagrangian. For convenience, we set
+\begin{equation}
+\begin{aligned}
+    &X\equiv X_R+\frac{\gamma_X}{16\pi^2 F^2}R_\epsilon+\frac{\tilde{\gamma}_X}{16\pi^2 F^2}, \ \ \ X\in \left\{ m,g,c_1,c_2,c_3,c_4 \right\}\\
+    &Y\equiv Y_R+\frac{\gamma_Y}{16\pi^2 F^2}R_\epsilon, \ \ \ Y\in \left\{ d_1+d_2,d_3,d_5,d_{14}-d_{15},d_{16},l_3,l_4 \right\}
+    \label{eq:xxll}
+\end{aligned}
+\end{equation}
+where $R_\epsilon=-\frac{1}{\epsilon}+\gamma_E-{\rm ln}(4\pi)-1$ with dimension $d=4-2\epsilon$ and $\gamma_E$ the Euler constant.
+
+\subsection{Nucleon}
+Firstly, we renormalize the mass and wave function of the nucleon. The dressed propagator of the nucleon is given as
+\begin{equation}
+   iS_1(p)=\frac{i}{\slashed{p}-m-\Sigma_1(\slashed{p})+i\epsilon }=\frac{iZ_1}{\slashed{p}-m_N+i\epsilon}+({\rm NP})
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{n_1pi.pdf}
+    \caption{One-particle irreducible diagrams contributing to the nucleon
+two-point function. Dashed and solid lines represent pions and nucleons, respectively. Circled numbers mark the chiral orders of the vertices.}
+    \label{fig:n1pi}
+\end{figure}
+where $-i\Sigma_1(\slashed{p})$ is the sum of one-partial irreducible diagrams of the nucleon propagator, as shown in Fig.~\ref{fig:n1pi} up to $O(p^3)$. $Z_1$ is the renormalization constant of the nucleon wave function, and NP represents the non-pole part. Furthermore, we can get
+\begin{equation}
+   \begin{aligned}
+      m_N=&m -4c_1 M^2+\Delta_m \\
+      \Delta_m=&\frac{3 g^2m_N}{32\pi^2 F^2}\times \left[A_0(m_N^2)+M^2 B_0(m_N^2,M^2,m_N^2)\right] \\
+      Z_1=&\frac{1}{1-\left. \frac{d}{d\slashed{p}}\Sigma(\slashed{p})\right|_{\slashed{p}=m_N}}=1+\Delta_{Z_1}\\
+      \Delta_{Z_1}=&\frac{3g^2(12m_N^2-5M^2)}{64\pi^2 F^2 (4m_N^2-M^2)}A_0(M^2)+\frac{3g^2M^2}{16 \pi^2 F^2 (4m_N^2-M^2)}A_0(m_N^2)\\
+      &+\frac{3g^2M^2(M^2-3m_N^2)}{16\pi^2 F^2(4m_N^2-M^2)}B_0(m_N^2,M^2,m_N^2)-\frac{3g^2 m_N^2 M^2}{16\pi^2 F^2(4m_N^2-M^2)}
+   \end{aligned}
+   \label{eq:mnmn}
+\end{equation}
+Passarino-Veltman notations~\cite{npb79pas} are used to represent the loop functions, whose definitions, UV divergent parts and infrared regular parts are shown in Appendix~\ref{sec:lf}. Substituting Equation~\ref{eq:xxll} into Equation~\ref{eq:mnmn} to cancel the UV divergence term and PCB term in $m_N$, we can get
+\begin{equation}
+    \gamma_m=\frac{3g_R^2 m_R^3}{2}, \ \ \tilde{\gamma}_m=0,\ \ \gamma_{c_1}=-\frac{3g_R^2m_R}{8}, \ \ \tilde{\gamma}_{c_1}=\frac{3g_R^2m_R}{8} \ .
+\end{equation}
+
+\subsection{Pion}
+The dressed propagator of the nucleon is given as
+\begin{equation}
+   iS_2(p^2)=\frac{i}{p^2-M^2-\Sigma_2(p^2)+i\epsilon }=\frac{iZ_2}{p^2-m_\pi^2+i\epsilon}+({\rm NP})
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{pi_1pi.pdf}
+    \caption{One-particle irreducible diagrams contributing to the pion two-point function.}
+    \label{fig:pi1pi}
+\end{figure}
+where $Z_2$ is the renormalization constant fo the pion wave function. $-i\Sigma_1(\slashed{p})$ is the sum of one-partial irreducible diagrams of the pion propagator, as shown in Fig.~\ref{fig:pi1pi} up to $O(p^4)$. After specific calculation, we can get
+\begin{equation}
+    \begin{aligned}
+        &m_\pi^2=M^2+\frac{2 l_3}{F^2}M^4-\frac{M^2 A_0[M^2]}{32\pi^2 F^2} \\
+        &Z_2=\frac{1}{1-\left. \frac{d}{dp^2}\Sigma(p^2)\right|_{p^2=m_\pi^2}}=1+\Delta_{Z_2} \\
+        &\Delta_{Z_2}=-\frac{2}{3F^2}\left\{ 3l_4 M^2+\frac{A_0[M^2]}{16\pi^2} \right\}
+    \end{aligned}
+    \label{eq:mmma}
+\end{equation}
+Canceling the UV divergent part in $m_\pi$, we can get the counter term of $l_3$
+\begin{equation}
+    \gamma_{l_3}=-\frac{F^2}{4}
+\end{equation}
+
+\subsection{Axial-vector coupling constant}
+To get the axial-vector coupling constant, we need to calculate the matrix element for axial-vector current between the one-nucleon states. Taking $r_\mu=-l_\mu=a_\mu=a_\mu^i \frac{\tau_i}{2}$ to introduce the axial-vector current in ChPT, and parameterize the matrix element as
+\begin{equation}
+   i \mathcal{T} =\langle N(p_2)|A^{\mu}_a| N(p_1) \rangle=i\overline{u}(p_2)\left[ G_A(q^2)\gamma^\mu \gamma_5+G_P(q^2)\frac{q^\mu}{2m}\gamma_5 \right]\frac{\tau_a}{2}u(p_1)
+\end{equation}
+where $q=p_2-p_1$. $G_A(q^2)$ is the axial form factor, and $G_P(q^2)$ is the induced pseudoscalar form factor. The axial-vector coupling constant $g_A$ is defined as $g_A=G_A(0)$. According to the LSZ reduction formula, $\mathcal{T }=Z_1 \bar{u}(p_2)\hat{\mathcal{T }}u(p_1)$. Feynman diagrams contributing to $\hat{\mathcal{T }}$ for calculation up to $O(p^3)$ are shown in Fig.~\ref{fig:ga}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{ga.pdf}
+    \caption{Feynman diagrams contributing to $g_A$.}
+    \label{fig:ga}
+\end{figure}
+The result is
+\begin{equation}
+   \begin{aligned}
+   g_A=&g+4d_{16}M^2+\Delta_g \\
+   \Delta_g=&\frac{g[4(g^2-2)m_N^2+(3g^2+2)M^2]}{16\pi^2 F^2(4m_N^2-M^2)}A_0[m_N^2]+\frac{g[(8g^2+4)m_N^2-(4g^2+1)M^2]}{16\pi^2 F^2(4m_N^2-M^2)}A_0[M^2]\\
+   &+\frac{gM^2[-8(g^2+1)m_N^2+(3g^2+2)M^2]}{16\pi^2 F^2(4m_N^2-M^2)}B_0[m_N^2,m_N^2,M^2]-\frac{g^3m_N^2(4m_N^2+3M^2)}{16\pi^2 F^2(4m_N^2-M^2)}
+   \end{aligned}
+   \label{eq:gamn}
+\end{equation}
+Canceling the UV divergent part and the PCB part to get
+\begin{equation}
+    \gamma_g=g_R\left( g_R^2-2 \right)m_R^2,\ \tilde{\gamma}_g=g_R^3 m_R^2, \ \gamma_{d_{16}}=\frac{g_R\left( g_R^2-1 \right)}{4}
+\end{equation}
+
+\subsection{Pion decay constant}
+The renormalization of the pion decay constant is also needed. Considering the interaction of the axial-vector current with one pion, the Feynman diagrams for calculation up to $O(p^4)$ are shown in Fig.~\ref{fig:f}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{f.pdf}
+    \caption{Feynman diagrams contributing to the pion decay constant}
+    \label{fig:f}
+\end{figure}
+Considering the renormalization constant of the pion wave function in the outer legs further, we can get
+\begin{equation}
+    f_\pi=F+\Delta_F,\ \ \Delta_F=\frac{l_4 M^2}{F}+\frac{A_0[M^2]}{16\pi^2F}
+\end{equation}
+Canceling the UV divergent part to get
+\begin{equation}
+    \gamma_{l_4}=F^2
+\end{equation}
+
+\section{$\pi$-$N$ scattering amplitudes}\label{sec:sa}
+\subsection{Amplitudes}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pintree.pdf}
+    \caption{Tree level diagrams contributing to $\pi N$ scattering up to $O(p^3)$. Crossed diagrams are not shown. }
+    \label{fig:pintree}
+\end{figure}
+Tree diagrams required for calculating up to $O(p^3)$ are shown in \ref{fig:pintree}. We do not directly consider the correction of the $c_1$ term in the $O(p^2)$ Lagrangian to the nucleon propagator in Feynman diagrams, but replace the $m$ in amplitudes with $m_2=m-4c_1M^2$. According to the result of nucleon renormalization, for calculation up to $O(p^3)$, the $m_2, g, F$ in the $O(p^2)$ and $O(p^3)$ amplitudes can be replaced by the corresponding physical values $m_N, g_A, f_\pi$, respectively. The difference caused by this approximation is of higher-order. In addition, it is found that, similar to the calculation of the renormalization of the axial-vector coupling constant, the $d_{16}$ term in $\mathcal{L}_{\pi N}^{(3)}$ always appears with the $O(p^1)$-order $\pi NN$ vertex, so it can be combined with $g$ to $g_2=g+4d_{16}M^2$. Finally, amplitudes are decomposed according to the isospin and Lorentz structure, and the scalar function can be obtained as
+\begin{equation}
+    \begin{aligned}
+        &A^+_{a}=0, \ B^+_{a}=0, \ A^-_{a}=0, \ B^-_{a}=\frac{1}{2F^2}, \ A^+_{b}=\frac{g_2^2(m_2+m_N)(s-m_N^2)}{4F^2 (s-m_2^2)},\\
+        &B^+_{b}=-\frac{g_2^2(s+m_N^2+2m_2m_N)}{4F^2 (s-m_2^2)}, \ A^-_{b}=\frac{g_2^2(m_2+m_N)(s-m_N^2)}{4F^2 (s-m_2^2)}, \ B^-_{b}=-\frac{g_2^2(s+m_N^2+2m_2m_N)}{4F^2 (s-m_2^2)},\\
+        &A^+_{c}=-\left\{ 2m_N^2[4c_1 M^2+c_3(t-2M^2)]+c_2(s-m_N^2-M^2)(u-m_N^2-M^2) \right\}/(2f_\pi^2 m_N^2), \ B^+_{c}=0,\\
+        &A^-_{c}=-\frac{c_4(s-u)}{2f_\pi^2}, \ B^-_{c}=\frac{2c_4 m_N}{f_\pi^2}, \ A^+_{d}=-\frac{(d_{14}-d_{15})(s-u)^2}{4f_\pi^2 m_N}, \ B^+_{d}=\frac{(d_{14}-d_{15})(s-u)}{f_\pi^2},\\
+        &A^-_{d}=[2(d_{1}+d_{2}+2d_{5})M^2-(d_{1}+d_{2})t]\frac{s-u}{2f_\pi^2 m_N}- d_{3}(s-m_N^2-M^2)(u-m_N^2-M^2)\frac{(s-u)}{4f_\pi^2 m_N^2},\\
+        &B^-_{d}=0, \ A^+_{e+f}=\frac{-2d_{18}g_A m_NM^2}{f_\pi^2}, \ B^+_{e+f}=\frac{d_{18}g_AM^2(s+3m_N^2)}{f_\pi^2(s-m_N^2)}, \ A^-_{e+f}=0,\\
+        &B^-_{e+f}=\frac{d_{18}g_AM^2(s+3m_N^2)}{f_\pi^2(s-m_N^2)}
+        \label{eq:aanm}
+    \end{aligned}
+\end{equation}
+Results of crossing diagrams can be obtained by the cross symmetry, that is Equation~\ref{eq:asst}. The $O(p^3)$ loop diagrams are shown in Fig.~\ref{fig:loop}. Scalar functions corresponding to each diagram are shown in the Appendix~\ref{sec:al}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{loop.pdf}
+    \caption{Loop diagrams of $\pi N$ scattering. Crossed diagrams are not shown.}
+    \label{fig:loop}
+\end{figure}
+
+\subsection{Renormalization of $\pi N$ scattering amplitudes}
+According to the previous renormalization results, we replace the quantities $m_2, g_2, F$ in $O(p^1)$ amplitudes in Equation~\ref{eq:aanm} with the corresponding physical values
+\begin{equation}
+    m_2\rightarrow m_N-\Delta_m,\ g_2\rightarrow g_A-\Delta_g,\ F\rightarrow f_\pi-\Delta_F
+\end{equation}
+Then expand at $\Delta_m=\Delta_g=\Delta_F=0$ to obtain the lowest order result $A_1^{\pm},B_1^{\pm}$ without divergence, and the first order divergence term $A_{\Delta_m}^\pm,A_{\Delta_g}^\pm,A_{\Delta_F}^\pm,B_{\Delta_m}^\pm,B_{\Delta_g}^\pm,B_{\Delta_F}^\pm$ proportional to $\Delta_m,\Delta_g,\Delta_F$.
+
+According to the LSZ reduction formula, the relationship between the complete $\pi N$ scattering amplitude $T$ and the amputated Greens function $\hat{T}$ is $T=Z_1 Z_2 \bar{u}(p_2)\hat{T}u(p_1)$. Therefore, when calculating the UV divergence term and the PCB term, in addition to considering the loop diagrams and the terms proportional to $\Delta_m,\Delta_g,\Delta_F$, it is also necessary to consider the multiplication of $A_{\Delta_{Z_1}}^\pm,B_{\Delta_{Z_1}}^\pm,A_{\Delta_{Z_2}}^\pm,B_{\Delta_{Z_2}}^\pm$ by $A_{\Delta_{Z_1}}^\pm,B_{\Delta_{Z_2}}^\pm$.
+
+From the results of tree diagrams, it can be found that scalar functions $A^{\pm}, B^{\pm}$ are not suitable for chiral expansion. For example, according to Equation~\ref{eq:tuhp}, the $A^{\pm}, B^{\pm}$ in $O(p^1)$ diagrams should be $O(p^1)$ and $O(p^0)$, respectively. But $A_b^{\pm}, B_b^{\pm}$ are $O(p^0), O(p^{-1})$. The scalar function obtained by the following Lorentz structure decomposition is suitable for chiral expansion
+\begin{equation}
+    T^\pm=\bar{u}(p_2,h_2)\left[ D^\pm(s,t,u)-\frac{[\slashed{q}_1,\slashed{q}_2]}{4m_N}B^\pm(s,t,u) \right]u(p_1,h_1)
+    \label{eq:tuhp2}
+\end{equation}
+where $D^{\pm}=A^{\pm}+\frac{s-u}{4m_N}B^{\pm}$. In the renormalization of $\pi N$ scattering amplitudes, there will actually be some divergence that cannot be canceled, but those divergence is of higher order than $O(p^3)$ in Equation~\ref{eq:tuhp2}, so it can be ignored for calculation up to $O(p^3)$.
+
+When calculating the PCB term, in addition to considering the infrared regular part of the loop function, the multiplication of $\frac{1}{\epsilon}$ in the loop function and terms proportional to $\epsilon$ in the previous coefficient of the loop function will also produce PCB terms. In the renormalization result of the axial-vector coupling constant, that is Equation~\ref{eq:gamn}, the PCB term in the last term of $\Delta_g$ comes from this.
+
+After obtaining the UV divergence term and PCB term in all the contributions above, use the quantities in Lagrangian to cancel them, and finally we can get
+\begin{equation}
+    \begin{aligned}
+        &\gamma_{c_2}=\frac{m_R}{2}(1-2g_R^2+g_R^4),\ \tilde{\gamma}_{c_2}=-\frac{m_R}{2}(2+g_R^4),\ \gamma_{c_3}=\frac{m_R}{4}(1-6g_R^2+g_R^4),\ \tilde{\gamma}_{c_3}=\frac{9}{4}m_Rg_R^4,\\
+        &\gamma_{c_4}=\frac{m_R}{4}(-1-2g_R^2+3g_R^4),\ \tilde{\gamma}_{c_4}=-\frac{m_R}{4}(5g_R^2+g_R^4),\ \gamma_{d_1+d_2}=\frac{1}{48}(1-4g_R^2+3g_R^4),\ \gamma_{d_3}=0,\\
+        &\gamma_{d_5}=\frac{1}{48}(1-g_R^2),\ \gamma_{d_{14}-d_{15}}=\frac{1}{4}(1-2g_R^2+g_R^4),
+    \end{aligned}
+\end{equation}
+
+This manuscript is organized as follows. Section~\ref{sec:tf} gives a brief introduction to the partial wave projection, the structure of pion-nucleon($\pi$-$N$) amplitudes, K-matrix and ChPT. In Section~\ref{sec:r} we afford a review on the fundamental renormalization in ChPT. In Section~\ref{sec:sa} the Feynman diagrams and amplitudes are presented, and the renormalization to these amplitudes is carried out. Finally, we study the quark-mass dependence of $N^*(920)$ in Section~\ref{sec:qmd}. The summary is given in Section~\ref{sec:s}.
+
+\section{Theoretical formalism}\label{sec:tf}
+\subsection{Partial wave projection}
+Pion-nucleon scattering is denoted as follows:
+$$\pi^a(q_1)+N_1(p_1,h_1)\rightarrow \pi^{b}(q_2)+N_2(p_2,h_2)$$
+where $h_1,h_2$ represent the helicity. Mandelstam variables are defined as $s=(q_1+p_1)^2,t=(q_1-q_2)^2,u=(q_1-p_2)^2$, and they satisfy the relation:
+\begin{equation}
+    s+t+u=2m_\pi^2+2m_N^2
+\end{equation}
+with $m_\pi,m_N$ the physical mass of the pion and the nucleon, respectively. The mandelstam variable $t$ can be expressed in terms of $s$ and the scattering angle $\theta$ in CM frame:
+\begin{equation}
+    t=2m_\pi^2-\frac{(s+m_\pi^2-m_N^2)^2}{2s}+\frac{[s-(m_N+m_\pi)^2][s-(m_N-m_\pi)^2]}{2s}\cos \theta
+\end{equation}
+The amplitude $T$ can be decomposed into two parts according to the isospin structure.
+\begin{equation}
+    T=\chi_2^{\dagger}\left( \delta^{ab} T^++\frac{1}{2}\left[ \tau^b,\tau^a \right] T^- \right)\chi_1
+    \label{eq:tcct}
+\end{equation}
+where $\tau^i$ is the Pauli matrix and $\chi_i$ denotes the nucleon iso-spinor. The isospin symmetry can be used to relate the decomposition to the amplitude with specific isospin.
+\begin{equation}
+    \begin{aligned}
+        T^{I=1/2}&=T^++2T^-\\
+        T^{I=3/2}&=T^+-T^-
+    \end{aligned}
+    \label{eq:titt}
+\end{equation}
+The isospin amplitudes can be further decomposed according to the Lorentz structure as
+\begin{equation}
+    T^\pm=\bar{u}(p_2,h_2)\left[ A^\pm(s,t,u)+\frac{1}{2}(\slashed{q}_1+\slashed{q}_2)B^\pm(s,t,u) \right]u(p_1,h_1)
+    \label{eq:tuhp}
+\end{equation}
+There are some relations between these scalar functions obtained from the crossing symmetry:
+\begin{equation}
+    A^\pm(s,t,u)=\pm A^\pm (u,t,s), \ \ B^\pm(s,t,u)=\mp B^\pm (u,t,s)
+    \label{eq:asst}
+\end{equation}
+Substituting Equation~\ref{eq:tuhp} into Equation~\ref{eq:titt}, we can get $T^I$ and its corresponding $A^I,B^I$. Then substituting the spinor expression with specific helicity into it, we can get the helicity amplitude $T_{H}$, where $H$ is ${+\pm}$. $\{+-\}$ means that the initial state nucleon helicity is $+1/2$ and the final state nucleon helicity is $-1/2$.
+\begin{equation}
+    \begin{aligned}
+    T^{I}_{++}&=\sqrt{\frac{1+\cos \theta}{2}}\left[ 2m A^{I}(s,t)+(s-m^2-M^2)B^{I}(s,t) \right]\\
+    T^{I}_{+-}&=-\sqrt{\frac{1-\cos \theta}{2}}\sqrt{\frac{1}{s}}\left[ (s-M^2+m^2)A^{I}(s,t)+m(s+M^2-m^2)B^{I}(s,t) \right]
+    \end{aligned}
+    \label{eq:tits}
+\end{equation}
+The partial wave amplitudes for total angular momentum can be written as
+\begin{equation}
+    T_H^{IJ}(s)=\frac{1}{32\pi}\int_{-1}^1 T_H^{I}(s,\cos \theta)d^J_{J_z J_{z'}}(\cos \theta) d\cos \theta
+    \label{eq:tiso}
+\end{equation}
+with $d^J$ the Wigner d function. The total angular momentum is the coupling result of orbital angular momentum and spin angular momentum. In $\pi N$ scattering, the partial wave with zero orbital angular momentum, zero total angular momentum and zero isospin number is denoted as $S_{11}$, whose amplitude is
+
+
+
+\begin{equation}
+    T(S_{11})=T^{1/2,1/2}_{++}+T^{1/2,1/2}_{+-}
+    \label{eq:tstt}
+\end{equation}
+
+\subsection{K-matrix and the analytic structure}
+Due to the unitarity of the $\mathcal{S}$ operator, the partial wave amplitude should
+
+%\section{Quark-mass dependence of $N^*(920)$}\label{sec:qmd}
+%\subsection{Up to $O(p^2)$}
+For calculating up to $O(p^2)$, $A_1^\pm,B_1^\pm$ and $A_c^\pm,B_c^\pm$ are needed. Substitute these scalar functions into Equation~\ref{eq:titt} to get $A^{\frac{1}{2}},B^{\frac{1}{2}}$, and then substitute them into Equation~\ref{eq:tits} to get the helicity amplitude $T^{\frac{1}{2}}_{+\pm}$ with isospin $\frac{1}{2}$. Then substitute the results into Equation~\ref{eq:tiso} and do the integration to obtain the partial wave amplitude $T^{\frac{1}{2}\frac{1}{2}}_{+\pm}$ with a total angular momentum of $\frac{1}{2}$. Then substitute them into the Equation~\ref{eq:tstt} to obtain the $\pi N$ scattering amplitude of $S_{11}$ channel. Finally it is substituted into Equation~\ref{eq:tllk} as $K$ for unitization to get the partial wave unitary amplitude $\tilde{T}$ and partial wave unitary matrix element $\tilde{S}$ for $S_{11}$ channel.

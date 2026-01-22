@@ -1,0 +1,47 @@
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Author
+Referee report of the article sent to Chin. Physics C by Xu Wang et al.
+---------------------------------------------------------------------------------------------
+
+In this article the authors have studied the quark mass dependence of the N*(920) subthreshold pi N resonance in the S11 channel. The article can be easily followed, however, I found it a bit misleading because of these reasons:
+
+1) The authors state in the introduction that the existence of this resonance has been confirmed by the Roy-Steiner method and cite the article [8]. However, in [8] it is clearly said that even if they find the pole in their calculation, the physical interpretation is far from obvious, so that they kind of point out that this resonance might be model dependent. Then, are there experimental or lattice signatures of this resonance? If it is not the case as it seems, are the pole parameters result of a model dependent calculation? Are there other methods where the pi – N interaction is studied and no related pole is observed? Is this resonance for example obtained in some QCD sum rule calculation or different methods? Is the existence of this resonance really tight to consequences of model independent assumptions in the pi - N scattering?
+
+In my opinion the authors should explain with more caution whether the existence of this pole is a model independent result or not.
+
+2) Related also with the previous item I think the authors should clarify and motivate the physical relevance of the N*(920) pole parameters. For example, which physical observable can be or has been measured which can be dependent or related to the N*(920) pole parameters?.
+
+3) The way in which the quark mass dependence is studied is not very much rigorous. For example, the authors use a simple parameterization for the nucleon mass, mN=800 MeV+ mpi. However, clearly the nucleon mass can be studied in BchPT, that they use to study the quark mass dependence of the N*(920) pole. Given that there are LQCD data for mN at different pion masses, see for example, recent RQCD data,  JHEP 05, 035 (2023), the authors should show that with their formalism they can describe well LQCD data available for baryons before studying the N*(920) resonance, in particular for the nucleon.
+
+
+Reviewer: 2
+
+Comments to the Author
+In this work, the authors investigate the quark-mass dependence of the  $ N^*(920) $ pole using unitarized chiral perturbation theory ($\chi$PT) amplitudes up to $ O(p^2) $ and $ O(p^3) $. They conclude that, as the quark mass is varied, the pole eventually crosses the $ u $-channel cut and moves onto an adjacent Riemann sheet, in qualitative agreement with predictions from the linear sigma model. The study addresses an interesting and timely topic. However, the presentation could be significantly improved to enhance clarity and readability. Before I can recommend the manuscript for publication, the following points should be addressed:\\
+
+1) Since the K-matrix method is employed to unitarize the $\chi$PT amplitudes, it is not strictly correct to refer to the approach simply as “$\chi$PT” in the title without mentioning unitarization. After all, unitarization is a nonperturbative scheme that lies beyond the scope of perturbative theory.\\
+
+2) To address the chiral extrapolation at $\mathcal{O}(p^2)$ and $\mathcal{O}(p^3)$, several low-energy constants (LECs) are introduced. However, the manuscript does not discuss the quark mass dependence of these LECs. It would be helpful to clarify why their variations with the quark mass (pion mass) are not taken into account.\\
+
+3) In this manuscript, many values of the LECs are taken from the literature. However, upon checking, I find that at least some of them are not cited from the original papers in which these LECs were actually determined. For example, below Eq. (27), Refs. [31] and [32] are cited for the values of  $d_{16}$ and $\bar{l}_4$. However, a careful reading of these two papers shows that the quoted values are themselves taken from earlier references. Proper citation is important not only for giving appropriate credit, but also for allowing readers to more easily trace the original sources. I have only checked these two cases; similar citations throughout the manuscript should be carefully and thoroughly verified.\\
+
+4) The authors present results obtained within several different schemes for comparison. The $ O(p^2) $ and $ O(p^3) $ results shown in Fig. 3 appear to be the “baseline” results that the paper aims to address. The $ O(p^2) $ parameters are taken from Ref. [3], while the $ O(p^3) $ results are taken from Ref. [33] and are referred to as the Yao set. The tree–Li and loop–Li results originate from the linear $\sigma$-model. The $ O(p^3)$-WI08 results are taken from Ref. [34]. In addition, a scheme constrained by lattice QCD results and phenomenological models is presented in Fig. 5. I have several suggestions regarding the presentation:\\
+
+4.a) The $ O(p^3) $ results in Fig. 3 and the $ O(p^3)$-(Yao) results in Fig. 4 are in fact the same. It would be better to unify the notation—specifically, whether to keep the “Yao” suffix—to avoid potential confusion. My suggestion is to omit the suffix for the baseline results that the paper focuses on, and retain explicit suffixes only for results only for comparison. Similarly, the two results shown in Fig. 5 should also be introduced with appropriate suffixes.\\
+
+4.b) In $\pi N$ studies, a crucial issue is whether the $\Delta$ resonance is included as an explicit degree of freedom. My understanding is that the Yao set includes the $\Delta$, whereas the WI08 set does not. This important distinction should be stated explicitly. For the remaining schemes—for example, the baseline $ O(p^2) $ results and the schemes shown in Fig. 5—it should also be clarified whether the $\Delta$ is treated explicitly or not. Moreover, the authors should comment on whether different treatments of the $\Delta$ are expected to lead to similar or qualitatively different results.\\
+
+4.c) Closely related to point (b) is the question of whether the LECs determined in schemes with and without an explicit $\Delta$ are used in a mixed manner. With the current presentation, this is not immediately clear to the reader, and clarification would be helpful.\\
+
+4.d) In the BChPT with $\Delta$, does the $m_\pi$-depedence of the $\Delta$ mass would affect the final  results?\\ 
+
+4.e) In Section 3, the value $ c_1 = -0.841,\mathrm{GeV}^{-1} $ is stated twice: once in Eq. (25) and again in the text below Eq. (27). Similarly, the value $ c_1 = -1.22,\mathrm{GeV}^{-1} $ is also stated twice, both below Eq. (27) and in Eq. (29). I suggest first presenting all analytical expressions in a unified manner, and then, for each scheme, listing all corresponding parameter values clearly in a single place.\\
+
+5) In Fig. 5, the $ m_\pi $-dependence of $ g_A $, $ F_\pi $, and $ m_N $ is addressed by several lattice-inspired models. It would be preferable to present their $ m_\pi $-dependence explicitly. For example, Fig. 2 could be separated into three subfigures, showing $ m_N $, $ g_A $, and $ F_\pi $ as functions of $ m_\pi $, respectively.\\
+
+6) In the lines 13,14 of Page 6, it was stated ``..., we have sufficient confidence that...".  While the statement conveys the authors' conviction, emphasizing a claim based mainly on confidence can be seen as subjective. It is better to modify it.\\
+
+7) Last but not least, the authors emphasize that the pole position eventually crosses the (u)-channel cut and moves onto an adjacent Riemann sheet. I wonder whether this feature has any important physical implications.
